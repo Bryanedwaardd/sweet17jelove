@@ -1,7 +1,6 @@
 import { useState } from "react";
 // import { useEffect } from 'react';
 // import { recordPageView } from ./utils/tracking';
-import { Helmet } from "react-helmet-async";
 import logo from "../assets/images/logo.png";
 import heroImage from "../assets/images/hero.jpeg";
 import menuIcon from "../assets/icons/menu.png";
@@ -46,11 +45,9 @@ function App() {
   return (
     <>
       {/* SEO Optimization */}
-      {/* <Helmet>
-        <title>Sun Kaca Indonesia - No 1 Glass Processor in Indonesia</title>
+        {/* <title>Sun Kaca Indonesia - No 1 Glass Processor in Indonesia</title>
         <meta name="description" content="High-quality custom glass processing in Indonesia." />
-        <meta name="keywords" content="Glass, Custom Glass, Indonesia, Architecture, Design" />  
-      </Helmet> */}
+        <meta name="keywords" content="Glass, Custom Glass, Indonesia, Architecture, Design" />   */}
       <div className="relative min-h-screen bg-white font-poppins">
         {/* Navbar */}
         <nav className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between p-4 bg-white shadow-md">
