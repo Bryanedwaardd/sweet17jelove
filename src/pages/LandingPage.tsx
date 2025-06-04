@@ -1,17 +1,18 @@
 import { useState } from "react";
 // import { useEffect } from 'react';
 // import { recordPageView } from ./utils/tracking';
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import heroImage from "../assets/images/hero.jpeg";
 import menuIcon from "../assets/icons/menu.png";
 import deleteIcon from "../assets/icons/delete.png";
 import packingImage from "../assets/images/packing.jpeg";
 import quoteIcon from "../assets/icons/quote.png";
-import dashboardIcon from "../assets/icons/dashboard.png"; // Import ikon dashboard
-import resumeIcon from "../assets/icons/resume.png"; // Import ikon resume
-import arrowRightIcon from "../assets/icons/arrow-right.png"; // Import ikon panah kanan
-import dropdownIcon from "../assets/icons/down-arrow.png"; // Import ikon panah kanan
-import checkingImage from "../assets/images/checking.jpeg";
+import dashboardIcon from "../assets/icons/dashboard.png";
+import resumeIcon from "../assets/icons/resume.png";
+import arrowRightIcon from "../assets/icons/arrow-right.png";
+import dropdownIcon from "../assets/icons/down-arrow.png";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -25,12 +26,6 @@ function App() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-
-  const toggleDropdown = (section: string) => {
-    setOpenDropdown((prev) => (prev === section ? null : section));
-  };
-
   const dropdownData = [
     {
       title: "Tentang Kami",
@@ -42,22 +37,68 @@ function App() {
     },
   ];
 
+  const [openDropdowns, setOpenDropdowns] = useState<string[]>([]);
+
+  const toggleDropdown = (title: string) => {
+    setOpenDropdowns((prev) =>
+      prev.includes(title)
+        ? prev.filter((item) => item !== title)
+        : [...prev, title]
+    );
+  };
+
   return (
     <>
       {/* SEO Optimization */}
-        {/* <title>Sun Kaca Indonesia - No 1 Glass Processor in Indonesia</title>
+      {/* <Helmet>
+        <title>Sun Kaca Indonesia - No 1 Glass Processor in Indonesia</title>
         <meta name="description" content="High-quality custom glass processing in Indonesia." />
-        <meta name="keywords" content="Glass, Custom Glass, Indonesia, Architecture, Design" />   */}
+        <meta name="keywords" content="Glass, Custom Glass, Indonesia, Architecture, Design" />  
+      </Helmet> */}
       <div className="relative min-h-screen bg-white font-poppins">
         {/* Navbar */}
         <nav className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between p-4 bg-white shadow-md">
           {/* Logo */}
           <img src={logo} alt="Logo" className="w-40 h-55" />
 
+          {/* Desktop Navbar */}
+          <div className="hidden md:flex gap-6">
+            <a
+              href="#"
+              className="text-gray-800 hover:text-[#F2B03F] font-semibold"
+            >
+              Home
+            </a>
+            <a
+              href="#"
+              className="text-gray-800 hover:text-[#F2B03F] font-semibold"
+            >
+              About Us
+            </a>
+            <a
+              href="#"
+              className="text-gray-800 hover:text-[#F2B03F] font-semibold"
+            >
+              Product
+            </a>
+            <a
+              href="#"
+              className="text-gray-800 hover:text-[#F2B03F] font-semibold"
+            >
+              Project
+            </a>
+            <a
+              href="#"
+              className="text-gray-800 hover:text-[#F2B03F] font-semibold"
+            >
+              Process
+            </a>
+          </div>
+
           {/* Hamburger Icon */}
           <button
             onClick={toggleSidebar}
-            className="text-2xl focus:outline-none"
+            className="text-2xl focus:outline-none md:hidden"
           >
             <img
               src={isSidebarOpen ? deleteIcon : menuIcon}
@@ -71,9 +112,7 @@ function App() {
         <div
           className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform ease-in-out duration-300 ${
             isSidebarOpen ? "translate-x-0" : "translate-x-full"
-          }
-          z-20
-          `}
+          } z-20 md:hidden`}
         >
           {/* Sidebar content goes here */}
           <div className="p-4 flex justify-end">
@@ -84,12 +123,34 @@ function App() {
               <img src={deleteIcon} alt="Close Icon" className="h-6" />
             </button>
           </div>
-          <div className="p-4">
-            <h4 className="text-xl font-medium">Home</h4>
-            <h4 className="text-xl font-medium">About Us</h4>
-            <h4 className="text-xl font-medium">Product</h4>
-            <h4 className="text-xl font-medium">Project</h4>
-            <h4 className="text-xl font-medium">Process</h4>
+          <div className="p-4 space-y-4">
+            <Link to="/" className="text-xl font-medium block hover:underline">
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className="text-xl font-medium block hover:underline"
+            >
+              About Us
+            </Link>
+            <Link
+              to="/product"
+              className="text-xl font-medium block hover:underline"
+            >
+              Product
+            </Link>
+            <Link
+              to="/project"
+              className="text-xl font-medium block hover:underline"
+            >
+              Project
+            </Link>
+            <Link
+              to="/process"
+              className="text-xl font-medium block hover:underline"
+            >
+              Process
+            </Link>
           </div>
         </div>
 
@@ -297,7 +358,7 @@ function App() {
                     <h3 className="text-lg font-semibold">{section.title}</h3>
                     <span
                       className={`transform transition-transform duration-300 ${
-                        openDropdown === section.title
+                        openDropdowns.includes(section.title)
                           ? "rotate-180"
                           : "rotate-0"
                       }`}
@@ -305,7 +366,7 @@ function App() {
                       <img src={dropdownIcon} className="h-6 w-6" alt="" />
                     </span>
                   </button>
-                  {openDropdown === section.title && (
+                  {openDropdowns.includes(section.title) && (
                     <ul className="mt-2 pl-4 space-y-2 text-gray-700 text-sm">
                       {section.items.map((item, i) => (
                         <li key={i} className="hover:underline cursor-pointer">

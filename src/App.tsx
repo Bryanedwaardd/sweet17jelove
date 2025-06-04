@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
-// import AboutPage from "./pages/aboutPage";
+import AboutPage from "./pages/AboutPage";
 // import ProductPage from "./pages/productPage";
 // import ContactUsPage from "./pages/ContactUsPage";
 // import ProjectPage from "./pages/ProjectPage";
@@ -15,6 +15,7 @@ function App() {
       <Route path="/contact" element={<ContactUsPage />} />
       <Route path="/projects" element={<ProjectPage />} /> */}
       <Route path="/process" element={<ProcessPage />} />
+      <Route path="/about" element={<AboutPage />} />
     </Routes>
   );
 }
