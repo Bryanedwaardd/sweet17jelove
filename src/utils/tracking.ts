@@ -1,14 +1,18 @@
 import { db } from "../config/firebase";
-import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
-// Function to record a page view
+// List of pages to track
+const trackedPages = ["/", "/products"]; 
+
+// Function to record page views
 export const recordPageView = async (pageUrl: string) => {
+  if (!trackedPages.includes(pageUrl)) return; 
+
   try {
     await addDoc(collection(db, "pageViews"), {
       url: pageUrl,
-      timestamp: Timestamp.now()
+      viewedAt: serverTimestamp(), 
     });
-    console.log(`Page view recorded for ${pageUrl}`);
   } catch (error) {
     console.error("Error recording page view: ", error);
   }
