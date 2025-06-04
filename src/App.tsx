@@ -1,4 +1,6 @@
 import { useState } from 'react';
+// import { useEffect } from 'react';
+// import { recordPageView } from './utils/tracking';
 import logo from './assets/images/logo.png';
 import heroImage from './assets/images/hero.jpeg';
 import menuIcon from './assets/icons/menu.png';
@@ -9,6 +11,11 @@ import checkingImage from './assets/images/checking.jpeg';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  // View Tracking per page
+  // useEffect(() => {
+  //   recordPageView(window.location.pathname);
+  // }, []);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
