@@ -8,6 +8,9 @@ import menuIcon from './assets/icons/menu.png';
 import deleteIcon from './assets/icons/delete.png';
 import packingImage from './assets/images/packing.jpeg';
 import quoteIcon from './assets/icons/quote.png';
+import dashboardIcon from './assets/icons/dashboard.png'; // Import ikon dashboard
+import resumeIcon from './assets/icons/resume.png';     // Import ikon resume
+import arrowRightIcon from './assets/icons/arrow-right.jpeg'; // Import ikon panah kanan
 import checkingImage from './assets/images/checking.jpeg';
 
 function App() {
@@ -26,11 +29,11 @@ function App() {
   return (
     <>
     {/* SEO Optimization */}
-      <Helmet>
+      {/* <Helmet>
         <title>Sun Kaca Indonesia - No 1 Glass Processor in Indonesia</title>
         <meta name="description" content="High-quality custom glass processing in Indonesia." />
         <meta name="keywords" content="Glass, Custom Glass, Indonesia, Architecture, Design" />  
-      </Helmet>
+      </Helmet> */}
       <div className="relative min-h-screen bg-white font-poppins">
         {/* Navbar */}
         <nav className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between p-4 bg-white shadow-md">
@@ -103,7 +106,6 @@ function App() {
 
               {/* Title */}
               <h2 className="text-3xl font-bold mb-4">Didorong dengan visi, di Inspirasi Probabilitas.</h2>
-              {/* <h2 className="text-3xl font-bold mb-4">Di Inspirasi Probabilitas.</h2> */}
 
               {/* Description */}
               <p className="text-base text-gray-700 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elite, sed do eiusmod temp or incididunt ut labore dan dolore magna aliqua. Sunt in culpa qui officia deser mon mollit anim id est laborum.</p>
@@ -139,24 +141,58 @@ function App() {
           <section className="p-4 flex flex-col items-center">
             {/* Placeholder Image */}
             <div className="w-[90%] bg-gray-300 h-72 flex items-center justify-center mb-8">
-              <img src={checkingImage} alt="Hero" className="w-full h-full object-cover" />
+              <img src={packingImage} alt="Hero" className="w-full h-full object-cover" />
             </div>
 
             {/* Text Content */}
             <div className="w-[90%] text-left">
               {/* Question */}
-              <h3 className="text-xl font-regular mb-2">Inspirasi Mengarah Pada Inovasi</h3>
+              <h3 className="text-xl font-regular mb-2">Kenapa Sun Kaca Indonesia?</h3>
 
               {/* Title */}
-              <h2 className="text-3xl font-bold mb-4">SKI Mewujudkan Mimpi</h2>
+              <h2 className="text-3xl font-bold mb-4">Didorong dengan visi, di Inspirasi Probabilitas.</h2>
 
               {/* Description */}
               <p className="text-base text-gray-700 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elite, sed do eiusmod temp or incididunt ut labore dan dolore magna aliqua. Sunt in culpa qui officia deser mon mollit anim id est laborum.</p>
 
               {/* Button */}
               <button className="bg-[#F2B03F] w-[100%] text-[#403019] px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-opacity-90 transition duration-300">
-                Lihat Detail
+                Our Story
               </button>
+            </div>
+          </section>
+
+          {/* Section: Galeri Proyek & Bantuan Profesional */}
+          <section className="p-4 py-12 bg-white">
+            <div className="text-center mb-8">
+              <p className="text-sm uppercase text-gray-600 mb-2">BAGAIMANA KAMI MEMBANTU ANDA?</p>
+              <h2 className="text-3xl font-bold">Dari inspirasi hingga bantuan profesional, temukan semua disini.</h2>
+            </div>
+
+            <div className="flex flex-col md:flex-row justify-center items-center md:space-x-4 space-y-4 md:space-y-0">
+              {/* Card: Galeri Proyek */}
+              <div className="bg-white p-6 rounded-lg shadow-md w-full md:w-1/2 flex items-center justify-between">
+                <div className="flex items-center">
+                  <img src={dashboardIcon} alt="Galeri Proyek Icon" className="h-10 w-10 mr-4" />
+                  <div>
+                    <h3 className="text-xl font-semibold">Galeri Proyek</h3>
+                    <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                  </div>
+                </div>
+                <img src={arrowRightIcon} alt="Arrow Right" className="h-6 w-6" />
+              </div>
+
+              {/* Card: Bantuan Profesional */}
+              <div className="bg-white p-6 rounded-lg shadow-md w-full md:w-1/2 flex items-center justify-between">
+                <div className="flex items-center">
+                  <img src={resumeIcon} alt="Bantuan Profesional Icon" className="h-10 w-10 mr-4" />
+                  <div>
+                    <h3 className="text-xl font-semibold">Bantuan Profesional</h3>
+                    <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                  </div>
+                </div>
+                <img src={arrowRightIcon} alt="Arrow Right" className="h-6 w-6" />
+              </div>
             </div>
           </section>
         </main>
