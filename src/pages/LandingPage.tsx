@@ -1,7 +1,6 @@
 import { useState } from "react";
 // import { useEffect } from 'react';
 // import { recordPageView } from ./utils/tracking';
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import heroImage from "../assets/images/hero.jpeg";
@@ -70,7 +69,7 @@ function App() {
               Home
             </a>
             <a
-              href="#"
+              href="about"
               className="text-gray-800 hover:text-[#F2B03F] font-semibold"
             >
               About Us
@@ -88,7 +87,7 @@ function App() {
               Project
             </a>
             <a
-              href="#"
+              href="process"
               className="text-gray-800 hover:text-[#F2B03F] font-semibold"
             >
               Process
