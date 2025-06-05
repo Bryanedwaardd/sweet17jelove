@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import { useEffect } from 'react';
 // import { recordPageView } from ./utils/tracking';
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,7 @@ import dashboardIcon from "../assets/icons/dashboard.png";
 import resumeIcon from "../assets/icons/resume.png";
 import arrowRightIcon from "../assets/icons/arrow-right.png";
 import dropdownIcon from "../assets/icons/down-arrow.png";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -45,6 +46,36 @@ function App() {
         ? prev.filter((item) => item !== title)
         : [...prev, title]
     );
+  };
+
+  const testimonials = [
+    {
+      quote: "Sun Kaca Indonesia kualitasnya sangat dapat diandalkan.",
+      name: "Bryan",
+      project: "MBK Project Jakarta",
+    },
+    {
+      quote: "Pelayanan cepat dan hasilnya memuaskan!",
+      name: "Siti",
+      project: "Villa Ubud Bali",
+    },
+    {
+      quote: "Kami sangat merekomendasikan Sun Kaca!",
+      name: "Andi",
+      project: "Ruko BSD",
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const isLast = currentIndex === testimonials.length - 1;
+  const isFirst = currentIndex === 0;
+
+  const handlePrev = () => {
+    if (!isFirst) setCurrentIndex((prev) => prev - 1);
+  };
+
+  const handleNext = () => {
+    if (!isLast) setCurrentIndex((prev) => prev + 1);
   };
 
   return (
@@ -190,65 +221,94 @@ function App() {
           </section>
 
           {/* New Section: Image, Question, Title, Description, Button */}
-          <section className="p-4 flex flex-col items-center">
-            {/* Placeholder Image */}
-            <div className="w-[90%] bg-gray-300 h-72 flex items-center justify-center mb-8">
+          <section className="p-4 flex flex-col md:flex-row md:items-center md:justify-center">
+            {/* Gambar - 70% saat desktop */}
+            <div className="w-full md:w-[70%] mb-8 md:mb-0">
               <img
                 src={packingImage}
                 alt="Hero"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded"
               />
             </div>
 
-            {/* Text Content */}
-            <div className="w-[90%] text-left">
-              {/* Question */}
-              <h3 className="text-xl font-regular mb-2">
+            {/* Teks - 30% saat desktop */}
+            <div className="w-full md:w-[30%] flex flex-col justify-center text-left md:pl-8">
+              <h3 className="text-xl mb-2 uppercase tracking-wide text-gray-600">
                 Kenapa Sun Kaca Indonesia?
               </h3>
 
-              {/* Title */}
-              <h2 className="text-3xl font-bold mb-4">
-                Didorong dengan visi, di Inspirasi Probabilitas.
+              <h2 className="text-3xl font-bold mb-4 text-gray-900">
+                Didorong dengan visi. <br className="hidden md:block" />
+                Di Inspirasi Probabilitas.
               </h2>
 
-              {/* Description */}
-              <p className="text-base text-gray-700 mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elite, sed do
-                eiusmod temp or incididunt ut labore dan dolore magna aliqua.
-                Sunt in culpa qui officia deser mon mollit anim id est laborum.
+              <p className="text-base text-gray-700 mb-6 leading-relaxed">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore dan dolore magna aliqua.
+                Sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
 
-              {/* Button */}
-              <button className="bg-[#F2B03F] w-[100%] text-[#403019] px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-opacity-90 transition duration-300">
+              {/* Tombol responsif */}
+              <button className="bg-[#F2B03F] text-[#403019] px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-opacity-90 transition duration-300 w-full md:w-[220px]">
                 Our Story
               </button>
             </div>
           </section>
 
           {/* Testimonial Section */}
-          <section className="bg-[#F5F3EF] py-16 px-8">
-            <div className="flex justify-center mb-4">
-              <img src={quoteIcon} alt="Quote Icon" className="h-20 w-20" />
-            </div>
-            <div className="text-center mb-6">
-              <p className="text-lg italic text-gray-700 mb-10">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat."
+          <section className="bg-[#F5F3EF] py-16 px-6 md:px-20 flex items-center justify-center">
+            <div className="w-full max-w-3xl text-center relative">
+              {/* Icon quotes besar */}
+              <div className="flex justify-center mb-8 select-none">
+                <img src={quoteIcon} alt="Quote icon" className="h-12" />
+              </div>
+
+              {/* Testimoni: teks lebih besar dan proporsional */}
+              <p className="text-lg md:text-2xlunderline underline-offset-6 mb-8 leading-relaxed font-serif">
+                {testimonials[currentIndex].quote}
               </p>
-              <p className="font-bold text-xl">Nama Pemberi Testimoni</p>
-              <p className="text-gray-600">Nama Project</p>
-            </div>
-            {/* Placeholder for Carousel - Anda bisa mengintegrasikan library carousel di sini */}
-            <div className="flex justify-center space-x-2">
-              <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
-              <div className="w-3 h-3 bg-gray-700 rounded-full"></div>
-              <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+              <p className="font-semibold text-black text-lg md:text-xl">
+                {testimonials[currentIndex].name}, Kontraktor
+              </p>
+              <p className="mt-2 text-sm md:text-base font-medium text-gray-800">
+                Lihat {testimonials[currentIndex].project} →
+              </p>
+
+              {/* Tombol navigasi desktop */}
+              <div className="hidden md:flex absolute inset-y-1/2 -translate-y-1/2 justify-between w-full px-4">
+                <button
+                  onClick={handlePrev}
+                  disabled={isFirst}
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeftIcon className="h-6 w-6 text-gray-700" />
+                </button>
+                <button
+                  onClick={handleNext}
+                  disabled={isLast}
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRightIcon className="h-6 w-6 text-gray-700" />
+                </button>
+              </div>
+
+              {/* Indicator (dot) */}
+              <div className="flex justify-center mt-10 space-x-3">
+                {testimonials.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`w-4 h-4 rounded-full border-2 transition-all duration-300 ${
+                      idx === currentIndex
+                        ? "bg-gray-800 border-gray-800"
+                        : "bg-transparent border-gray-400"
+                    }`}
+                    aria-label={`Go to testimonial ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </section>
-
           {/* New Section: Image, Question, Title, Description, Button (Duplicate) */}
           <section className="p-4 flex flex-col items-center">
             {/* Placeholder Image */}
