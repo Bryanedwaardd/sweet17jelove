@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 // import { useEffect } from 'react';
-// import { recordPageView } from ./utils/tracking';
-import { useNavigate } from "react-router-dom";
+// import { recordPageView } from '../utils/tracking';
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import heroImage from "../assets/images/hero.jpeg";
@@ -13,7 +12,6 @@ import dashboardIcon from "../assets/icons/dashboard.png";
 import resumeIcon from "../assets/icons/resume.png";
 import arrowRightIcon from "../assets/icons/arrow-right.png";
 import dropdownIcon from "../assets/icons/down-arrow.png";
-import checkingImage from "../assets/images/checking.jpeg";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 function App() {
@@ -102,7 +100,7 @@ function App() {
               Home
             </a>
             <a
-              href="#"
+              href="about"
               className="text-gray-800 hover:text-[#F2B03F] font-semibold"
             >
               About Us
@@ -120,7 +118,7 @@ function App() {
               Project
             </a>
             <a
-              href="#"
+              href="process"
               className="text-gray-800 hover:text-[#F2B03F] font-semibold"
             >
               Process
@@ -311,35 +309,39 @@ function App() {
             </div>
           </section>
           {/* New Section: Image, Question, Title, Description, Button (Duplicate) */}
-          <section className="p-4 flex flex-col md:flex-row md:items-center md:justify-center">
-            {/* Teks - 30% saat desktop */}
-            <div className="w-full md:w-[30%] text-left md:pr-8 order-2 md:order-1">
-              <h3 className="text-xl mb-2 font-regular uppercase tracking-wide text-gray-600">
-                INSPIRASI MENGARAH PADA INOVASI
+          <section className="p-4 flex flex-col items-center">
+            {/* Placeholder Image */}
+            <div className="w-[90%] bg-gray-300 h-72 flex items-center justify-center mb-8">
+              <img
+                src={packingImage}
+                alt="Hero"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Text Content */}
+            <div className="w-[90%] text-left">
+              {/* Question */}
+              <h3 className="text-xl font-regular mb-2">
+                Kenapa Sun Kaca Indonesia?
               </h3>
 
-              <h2 className="text-3xl font-bold mb-4 text-gray-900">
-                SKI Mewujudkan Impian
+              {/* Title */}
+              <h2 className="text-3xl font-bold mb-4">
+                Didorong dengan visi, di Inspirasi Probabilitas.
               </h2>
 
-              <p className="text-base text-gray-700 mb-8 leading-relaxed">
+              {/* Description */}
+              <p className="text-base text-gray-700 mb-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elite, sed do
                 eiusmod temp or incididunt ut labore dan dolore magna aliqua.
                 Sunt in culpa qui officia deser mon mollit anim id est laborum.
               </p>
 
-              <button className="bg-[#F2B03F] w-full text-[#403019] px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-opacity-90 transition duration-300">
-                Lihat Detail
+              {/* Button */}
+              <button className="bg-[#F2B03F] w-[100%] text-[#403019] px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-opacity-90 transition duration-300">
+                Our Story
               </button>
-            </div>
-
-            {/* Gambar - 70% saat desktop */}
-            <div className="w-full md:w-[70%] mb-8 md:mb-0 order-1 md:order-2">
-              <img
-                src={checkingImage}
-                alt="Checking"
-                className="w-full h-full object-cover rounded"
-              />
             </div>
           </section>
 
@@ -403,8 +405,8 @@ function App() {
             </div>
           </section>
 
-          {/* Dropdown Section (Mobile Only) */}
-          <section className="bg-white px-6 py-10 border-t border-gray-300 md:hidden">
+          {/* Dropdown Section */}
+          <section className="bg-white px-6 py-10 border-t border-gray-300">
             <div className="space-y-4">
               {dropdownData.map((section, index) => (
                 <div key={index} className="pb-2">

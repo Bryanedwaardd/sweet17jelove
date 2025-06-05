@@ -1,10 +1,13 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import AboutPage from "./pages/AboutPage";
 // import ProductPage from "./pages/productPage";
 // import ContactUsPage from "./pages/ContactUsPage";
 // import ProjectPage from "./pages/ProjectPage";
 import ProcessPage from "./pages/ProcessPage";
+import AnalyticsPage from "./pages/AnalyticsPage";
+
+// const isAdmin = localStorage.getItem("userRole") === 'admin';
 
 function App() {
   return (
@@ -15,6 +18,7 @@ function App() {
       {/* <Route path="/projects" element={<ProjectPage />} /> */}
       <Route path="/process" element={<ProcessPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/analytics" element={<AnalyticsPage />} />
     </Routes>
   );
 }
