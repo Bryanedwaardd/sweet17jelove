@@ -1,5 +1,3 @@
-import React from "react";
-
 const AboutPage = () => {
   return (
     <div className="min-h-screen px-6 py-10 bg-white text-gray-800">
