@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 // import { useEffect } from 'react';
-// import { recordPageView } from '../utils/tracking';
-import Footer from './footer';
+// import { recordPageView } from ./utils/tracking';
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import heroImage from "../assets/images/hero.jpeg";
@@ -13,6 +13,7 @@ import dashboardIcon from "../assets/icons/dashboard.png";
 import resumeIcon from "../assets/icons/resume.png";
 import arrowRightIcon from "../assets/icons/arrow-right.png";
 import dropdownIcon from "../assets/icons/down-arrow.png";
+import checkingImage from "../assets/images/checking.jpeg";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 function App() {
@@ -101,7 +102,7 @@ function App() {
               Home
             </a>
             <a
-              href="about"
+              href="#"
               className="text-gray-800 hover:text-[#F2B03F] font-semibold"
             >
               About Us
@@ -119,7 +120,7 @@ function App() {
               Project
             </a>
             <a
-              href="process"
+              href="#"
               className="text-gray-800 hover:text-[#F2B03F] font-semibold"
             >
               Process
@@ -310,39 +311,35 @@ function App() {
             </div>
           </section>
           {/* New Section: Image, Question, Title, Description, Button (Duplicate) */}
-          <section className="p-4 flex flex-col items-center">
-            {/* Placeholder Image */}
-            <div className="w-[90%] bg-gray-300 h-72 flex items-center justify-center mb-8">
-              <img
-                src={packingImage}
-                alt="Hero"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Text Content */}
-            <div className="w-[90%] text-left">
-              {/* Question */}
-              <h3 className="text-xl font-regular mb-2">
-                Kenapa Sun Kaca Indonesia?
+          <section className="p-4 flex flex-col md:flex-row md:items-center md:justify-center">
+            {/* Teks - 30% saat desktop */}
+            <div className="w-full md:w-[30%] text-left md:pr-8 order-2 md:order-1">
+              <h3 className="text-xl mb-2 font-regular uppercase tracking-wide text-gray-600">
+                INSPIRASI MENGARAH PADA INOVASI
               </h3>
 
-              {/* Title */}
-              <h2 className="text-3xl font-bold mb-4">
-                Didorong dengan visi, di Inspirasi Probabilitas.
+              <h2 className="text-3xl font-bold mb-4 text-gray-900">
+                SKI Mewujudkan Impian
               </h2>
 
-              {/* Description */}
-              <p className="text-base text-gray-700 mb-8">
+              <p className="text-base text-gray-700 mb-8 leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elite, sed do
                 eiusmod temp or incididunt ut labore dan dolore magna aliqua.
                 Sunt in culpa qui officia deser mon mollit anim id est laborum.
               </p>
 
-              {/* Button */}
-              <button className="bg-[#F2B03F] w-[100%] text-[#403019] px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-opacity-90 transition duration-300">
-                Our Story
+              <button className="bg-[#F2B03F] w-full text-[#403019] px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-opacity-90 transition duration-300">
+                Lihat Detail
               </button>
+            </div>
+
+            {/* Gambar - 70% saat desktop */}
+            <div className="w-full md:w-[70%] mb-8 md:mb-0 order-1 md:order-2">
+              <img
+                src={checkingImage}
+                alt="Checking"
+                className="w-full h-full object-cover rounded"
+              />
             </div>
           </section>
 
@@ -406,8 +403,8 @@ function App() {
             </div>
           </section>
 
-          {/* Dropdown Section */}
-          <section className="bg-white px-6 py-10 border-t border-gray-300">
+          {/* Dropdown Section (Mobile Only) */}
+          <section className="bg-white px-6 py-10 border-t border-gray-300 md:hidden">
             <div className="space-y-4">
               {dropdownData.map((section, index) => (
                 <div key={index} className="pb-2">
@@ -439,7 +436,126 @@ function App() {
               ))}
             </div>
           </section>
-          <Footer />
+
+          {/* Footer */}
+          <footer className="bg-white border-t border-gray-300 px-6 py-8 text-sm md:text-base">
+            {/* Bagian Atas */}
+            <div className="flex flex-col md:flex-row justify-between md:items-start gap-8 mb-6 md:px-12">
+              {/* MOBILE VIEW: Sosial Media + Contact Info */}
+              <div className="flex justify-between md:hidden">
+                {/* Sosial Media - Mobile */}
+                <div className="flex gap-4">
+                  {["facebook", "instagram", "youtube", "whatsapp"].map(
+                    (name, i) => (
+                      <a
+                        key={i}
+                        href="#"
+                        className="w-10 h-10 border rounded-full flex items-center justify-center"
+                      >
+                        <img
+                          src={`src/assets/icons/${name}.png`}
+                          alt={name}
+                          className="w-6 h-6"
+                        />
+                      </a>
+                    )
+                  )}
+                </div>
+
+                {/* Contact Info - Mobile */}
+                <div className="flex flex-col gap-4">
+                  {[
+                    { label: "Find Us", icon: "location" },
+                    { label: "Product Flyer", icon: "document" },
+                    { label: "Our Email", icon: "mail" },
+                    { label: "Contact Us", icon: "phone" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-x-3">
+                      <img
+                        src={`src/assets/icons/${item.icon}.png`}
+                        alt={item.icon}
+                        className="w-5 h-5"
+                      />
+                      <span className="text-sm font-medium text-gray-800">
+                        {item.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* DESKTOP VIEW: Menu Kiri & Kanan */}
+              <div className="hidden md:flex justify-between w-full">
+                {/* KIRI: Tentang Kami + Bantuan */}
+                <div className="flex gap-12">
+                  {/* Tentang Kami */}
+                  <div>
+                    <h4 className="font-semibold text-xl mb-3">Tentang Kami</h4>
+                    <ul className="space-y-2 text-base text-gray-700">
+                      <li>Our Story</li>
+                    </ul>
+                  </div>
+
+                  {/* Bantuan */}
+                  <div>
+                    <h4 className="font-semibold text-xl mb-3">Bantuan</h4>
+                    <ul className="space-y-2 text-base text-gray-700">
+                      <li>Pusat Bantuan</li>
+                      <li>Hubungi Profesional</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* KANAN: Contact Info */}
+                <div className="flex flex-col gap-4">
+                  {[
+                    { label: "Find Us", icon: "location" },
+                    { label: "Product Flyer", icon: "document" },
+                    { label: "Our Email", icon: "mail" },
+                    { label: "Contact Us", icon: "phone" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-x-3">
+                      <img
+                        src={`src/assets/icons/${item.icon}.png`}
+                        alt={item.icon}
+                        className="w-5 h-5"
+                      />
+                      <span className="text-base font-medium text-gray-800">
+                        {item.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Bagian Bawah */}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-t border-gray-300 pt-4 md:px-12">
+              {/* Sosial Media - Desktop */}
+              <div className="hidden md:flex gap-4">
+                {["facebook", "instagram", "youtube", "whatsapp"].map(
+                  (name, i) => (
+                    <a
+                      key={i}
+                      href="#"
+                      className="w-10 h-10 border rounded-full flex items-center justify-center"
+                    >
+                      <img
+                        src={`src/assets/icons/${name}.png`}
+                        alt={name}
+                        className="w-6 h-6"
+                      />
+                    </a>
+                  )
+                )}
+              </div>
+
+              {/* Copyright */}
+              <p className="text-gray-600 text-sm md:text-base">
+                © 2025 Sun Kaca Indonesia
+              </p>
+            </div>
+          </footer>
         </main>
       </div>
     </>

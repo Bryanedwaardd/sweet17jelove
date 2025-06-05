@@ -5,7 +5,7 @@ import AboutPage from "./pages/AboutPage";
 // import ContactUsPage from "./pages/ContactUsPage";
 // import ProjectPage from "./pages/ProjectPage";
 import ProcessPage from "./pages/ProcessPage";
-import AnalyticsPage from "./pages/AnalyticsPage";
+// import AnalyticsPage from "./pages/AnalyticsPage";
 
 // const isAdmin = localStorage.getItem("userRole") === 'admin';
 
@@ -18,7 +18,7 @@ function App() {
       {/* <Route path="/projects" element={<ProjectPage />} /> */}
       <Route path="/process" element={<ProcessPage />} />
       <Route path="/about" element={<AboutPage />} />
-      <Route path="/analytics" element={<AnalyticsPage />} />
+      {/* <Route path="/analytics" element={<AnalyticsPage />} /> */}
     </Routes>
   );
 }
