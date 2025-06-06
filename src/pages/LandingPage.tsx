@@ -32,16 +32,23 @@ function App() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const isLast = currentIndex === testimonials.length - 1;
-  const isFirst = currentIndex === 0;
 
   const handlePrev = () => {
-    if (!isFirst) setCurrentIndex((prev) => prev - 1);
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   const handleNext = () => {
-    if (!isLast) setCurrentIndex((prev) => prev + 1);
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
 
   return (
     <>
@@ -139,14 +146,12 @@ function App() {
               <div className="hidden md:flex absolute inset-y-1/2 -translate-y-1/2 justify-between w-full px-4">
                 <button
                   onClick={handlePrev}
-                  disabled={isFirst}
                   aria-label="Previous testimonial"
                 >
                   <ChevronLeftIcon className="h-6 w-6 text-gray-700" />
                 </button>
                 <button
                   onClick={handleNext}
-                  disabled={isLast}
                   aria-label="Next testimonial"
                 >
                   <ChevronRightIcon className="h-6 w-6 text-gray-700" />
