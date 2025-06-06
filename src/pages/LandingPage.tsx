@@ -1,5 +1,4 @@
-import { useState} from "react";
-// import { useEffect } from 'react';
+import { useState, useEffect } from "react";
 // import { recordPageView } from ./utils/tracking';
 import heroImage from "../assets/images/hero.jpeg";
 import packingImage from "../assets/images/packing.jpeg";
