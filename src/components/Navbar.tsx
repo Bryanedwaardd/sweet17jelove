@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // kalau pakai react-router
+import { Link } from "react-router-dom";
 import menuIcon from "../assets/icons/menu.png";
 import deleteIcon from "../assets/icons/delete.png";
+import phoneIcon from "../assets/icons/phone-call-2.png";
 import logo from "../assets/images/logo.png";
 
 export default function Navbar() {
@@ -19,7 +20,7 @@ export default function Navbar() {
         <img src={logo} alt="Logo" className="w-40 h-14 object-contain" />
 
         {/* Desktop Navbar */}
-        <div className="hidden md:flex gap-6">
+        <div className="hidden md:flex gap-6 items-center">
           <Link to="/" className="text-gray-800 hover:text-[#F2B03F] font-semibold">
             Home
           </Link>
@@ -34,6 +35,15 @@ export default function Navbar() {
           </Link>
           <Link to="/process" className="text-gray-800 hover:text-[#F2B03F] font-semibold">
             Process
+          </Link>
+
+          {/* Highlighted Contact Us */}
+          <Link
+            to="/contact"
+            className="ml-2 bg-[#F2B03F] text-white font-semibold px-4 py-2 rounded-full hover:bg-[#e6a52d] transition flex items-center gap-2"
+          >
+            <img src={phoneIcon} alt="Phone" className="w-5 h-5" />
+            Contact Us
           </Link>
         </div>
 
@@ -76,6 +86,16 @@ export default function Navbar() {
           </Link>
           <Link to="/process" className="text-xl font-medium block hover:underline" onClick={toggleSidebar}>
             Process
+          </Link>
+
+          {/* Contact Us */}
+          <Link
+            to="/contact"
+            className="flex items-center justify-center gap-2 bg-[#F2B03F] text-white font-semibold py-2 rounded-full hover:bg-[#e6a52d] transition"
+            onClick={toggleSidebar}
+          >
+            <img src={phoneIcon} alt="Phone" className="w-5 h-5" />
+            Contact Us
           </Link>
         </div>
       </div>

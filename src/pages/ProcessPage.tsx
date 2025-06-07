@@ -1,48 +1,79 @@
-const ProcessPage = () => {
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import processHeroImage from "../assets/images/project.jpeg"; // Ganti dengan path gambar her
+
+export default function ProcessPage() {
   return (
-    <div className="min-h-screen bg-white font-poppins p-8">
-      {/* Page Header */}
-      <h1 className="text-4xl font-bold text-center mb-6">Our Glass Processing Stages</h1>
-      <p className="text-lg text-center text-gray-700 mb-8">
-        We ensure precision and quality at every stage of our process.
-      </p>
+    <div className="bg-white min-h-screen">
+      <Navbar />
 
-      {/* Process Steps */}
-      <div className="flex flex-col gap-10">
-        {/* Step 1 */}
-        <div className="md:w-3/4 mx-auto">
-          <h2 className="text-3xl font-semibold">Step 1: Glass Cutting</h2>
-          <p className="text-gray-700 mt-4">
-            Our experts use high-precision cutting tools to shape the glass according to client specifications.
+      {/* Hero Section */}
+      <section className="relative w-screen h-[80vh]">
+        <img
+          src={processHeroImage}
+          alt="Process Hero"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center pl-6 md:pl-16 text-white">
+          <p className="text-base md:text-lg mb-1 uppercase">
+            FROM IDEA TO EXECUTION
+          </p>
+          <h1 className="text-4xl md:text-5xl font-bold">OUR PROCESS</h1>
+        </div>
+      </section>
+
+      {/* Brown Separator Line */}
+      <div className="w-1/3 h-[7px] bg-[#BF8B30] mx-auto my-10" />
+
+      {/* Intro Text */}
+      <section className="text-center max-w-4xl mx-auto px-4 pb-10">
+        <p className="text-gray-700 text-base md:text-lg">
+          Proses kami dimulai dari pemahaman mendalam terhadap visi Anda. Setiap
+          langkah kami rancang dengan detail demi mewujudkan hasil yang tidak
+          hanya estetis, namun juga bermakna dan berkelanjutan. Berikut adalah
+          tahapan yang kami lakukan dalam setiap proyek.
+        </p>
+      </section>
+
+      {/* Section 1 - Image Kiri, Text Kanan */}
+      <section className="flex flex-col md:flex-row items-center max-w-6xl mx-auto px-4 gap-6 py-10">
+        <img
+          src="/assets/images/process-1.jpeg" // ganti dengan path gambar sesuai
+          alt="Process 1"
+          className="w-full md:w-1/2 h-[300px] object-cover rounded-lg"
+        />
+        <div className="md:w-1/2">
+          <h2 className="text-xl font-bold mb-3">
+            Menjaga Kualitas Dari Setiap Produk Kami
+          </h2>
+          <p className="text-gray-700 text-sm">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elite, sed do
+            eiusmod temp or incididunt ut labore dan dolore magna aliqua. Sunt
+            in culpa qui officia deser mon mollit anim id est laborum.
           </p>
         </div>
+      </section>
 
-        {/* Step 2 */}
-        <div className="md:w-3/4 mx-auto">
-          <h2 className="text-3xl font-semibold">Step 2: Polishing & Strengthening</h2>
-          <p className="text-gray-700 mt-4">
-            The glass undergoes a special polishing process to enhance durability and aesthetics.
+      {/* Section 2 - Image Kanan, Text Kiri */}
+      <section className="flex flex-col-reverse md:flex-row items-center max-w-6xl mx-auto px-4 gap-6 py-10">
+        <div className="md:w-1/2">
+          <h2 className="text-xl font-bold mb-3">
+            Tenaga Kerja Yang Berkualitas
+          </h2>
+          <p className="text-gray-700 text-sm">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elite, sed do
+            eiusmod temp or incididunt ut labore dan dolore magna aliqua. Sunt
+            in culpa qui officia deser mon mollit anim id est laborum.
           </p>
         </div>
-
-        {/* Step 3 */}
-        <div className="md:w-3/4 mx-auto">
-          <h2 className="text-3xl font-semibold">Step 3: Quality Control</h2>
-          <p className="text-gray-700 mt-4">
-            Each glass product is inspected to ensure it meets industry standards for safety and performance.
-          </p>
-        </div>
-
-        {/* Step 4 */}
-        <div className="md:w-3/4 mx-auto">
-          <h2 className="text-3xl font-semibold">Step 4: Packaging & Delivery</h2>
-          <p className="text-gray-700 mt-4">
-            The processed glass is carefully packaged to prevent damage and delivered to customers with precision handling.
-          </p>
-        </div>
-      </div>
+        <img
+          src="/assets/images/process-2.jpeg" // ganti dengan path gambar sesuai
+          alt="Process 2"
+          className="w-full md:w-1/2 h-[300px] object-cover rounded-lg"
+        />
+      </section>
+      
+      <Footer />
     </div>
   );
-};
-
-export default ProcessPage;
+}
