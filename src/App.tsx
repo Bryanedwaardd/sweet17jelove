@@ -3,7 +3,7 @@ import LandingPage from "./pages/LandingPage";
 import AboutPage from "./pages/AboutPage";
 import ProductPage from "./pages/ProductPage";
 // import ContactUsPage from "./pages/ContactUsPage";
-// import ProjectPage from "./pages/ProjectPage";
+import ProjectPage from "./pages/ProjectPage";
 import ProcessPage from "./pages/ProcessPage";
 // import AnalyticsPage from "./pages/AnalyticsPage";
 
@@ -15,7 +15,7 @@ function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/product" element={<ProductPage />} />
       {/* <Route path="/contact" element={<ContactUsPage />} /> */}
-      {/* <Route path="/projects" element={<ProjectPage />} /> */}
+      <Route path="/project" element={<ProjectPage />} />
       <Route path="/process" element={<ProcessPage />} />
       <Route path="/about" element={<AboutPage />} />
       {/* <Route path="/analytics" element={<AnalyticsPage />} /> */}
