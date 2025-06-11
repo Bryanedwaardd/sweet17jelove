@@ -4,37 +4,57 @@ import ProductCard from "../components/ProductCard";
 import productImage from "../assets/images/product.jpeg";
 import contactImage from "../assets/images/contact.jpeg";
 import phoneIcon from "../assets/icons/phone-call-2.png";
+import { Link } from "react-router-dom";
 
-const products = [
+type Product = {
+  image: string;
+  title: string;
+  description: string;
+  link: string;
+};
+
+const products: Product[] = [
   {
-    image: "/glass.png",
-    title: "Tempered Glass",
-    description: "Window or Stair Glass Detail",
+    image: "/images/tempered.jpg",
+    title: "Kaca Tempered",
+    description:
+      "Kaca yang diperkuat melalui proses pemanasan, tahan benturan dan panas tinggi.",
+    link: "/product/tempered",
   },
   {
-    image: "/glass2.png",
-    title: "Laminated Glass",
-    description: "Soundproof and UV resistant",
+    image: "/images/laminated.jpg",
+    title: "Kaca Laminated",
+    description:
+      "Kaca dua lapis dengan lapisan film di antaranya, memberikan keamanan ekstra.",
+    link: "/product/laminated",
   },
   {
-    image: "/glass3.png",
-    title: "Insulated Glass",
-    description: "Thermal Efficiency Glass",
+    image: "/images/insulating.jpg",
+    title: "Kaca Insulating",
+    description:
+      "Kaca berlapis ganda dengan ruang udara di tengah untuk isolasi suhu dan suara.",
+    link: "/product/insulating",
   },
   {
-    image: "/glass4.png",
-    title: "Frosted Glass",
-    description: "Privacy Decorative Glass",
+    image: "/images/bending.jpg",
+    title: "Kaca Bending",
+    description:
+      "Kaca yang dibentuk secara melengkung untuk desain arsitektur yang elegan.",
+    link: "/product/bending",
   },
   {
-    image: "/glass5.png",
-    title: "Patterned Glass",
-    description: "Design & Decor Glass",
+    image: "/images/sandblast.jpg",
+    title: "Kaca Sandblast",
+    description:
+      "Kaca buram dengan teknik sandblast untuk efek privasi dan estetika ruangan.",
+    link: "/product/sandblast",
   },
   {
-    image: "/glass6.png",
-    title: "Tinted Glass",
-    description: "Sun-Control Glass",
+    image: "/images/bevel.jpg",
+    title: "Kaca Bevel",
+    description:
+      "Kaca dengan potongan tepi miring yang memberikan efek cahaya dan keindahan.",
+    link: "/product/bevel",
   },
 ];
 
@@ -71,15 +91,27 @@ export default function ProductPage() {
         </p>
       </section>
 
-      {/* Product Cards */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mx-5">
+      {/* Product Cards Section */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 sm:px-6 lg:px-8 py-12">
         {products.map((product, index) => (
-          <ProductCard
+          <Link
+            to={product.link}
             key={index}
-            image={product.image}
-            title={product.title}
-            description={product.description}
-          />
+            className="border rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden"
+          >
+            <img
+              src={product.image}
+              alt={product.title}
+              className="h-48 w-full object-cover"
+            />
+            <div className="p-4">
+              <h2 className="text-xl font-semibold mb-2">{product.title}</h2>
+              <p className="text-gray-600 mb-4">{product.description}</p>
+              <button className="bg-[#BF8B30] hover:bg-[#a46f26] text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                Lihat Detail
+              </button>
+            </div>
+          </Link>
         ))}
       </section>
 
@@ -111,14 +143,6 @@ export default function ProductPage() {
           </a>
         </div>
       </section>
-
-      {/* Carousel (placeholder, can integrate Swiper or Slick)
-      <section className="text-center my-10">
-        <p className="text-sm text-gray-600">Showing 6 of 30 results</p>
-        <button className="mt-4 border px-6 py-2 rounded-lg hover:bg-gray-200 transition">
-          Show More
-        </button>
-      </section> */}
 
       <br />
       <br />

@@ -9,65 +9,123 @@ import phoneIcon from "../assets/icons/phone-call-2.png";
 // Product data
 const products = [
   {
-    id: "product-a",
-    name: "Product A",
+    id: "tempered",
+    name: "Tempered",
     description:
-      "Ini adalah deskripsi lengkap untuk produk A. Menjelaskan keunggulan dan fitur produk secara detail dengan penjelasan yang komprehensif untuk memberikan pemahaman menyeluruh kepada pelanggan.",
+      "Kaca tempered adalah jenis kaca pengaman yang diproses dengan perlakuan panas atau kimia terkontrol untuk meningkatkan kekuatannya dibandingkan kaca biasa. Proses ini menciptakan tekanan kompresi di permukaan luar dan tekanan tarik di bagian dalam, yang membuat kaca tempered jauh lebih kuat dan lebih tahan terhadap benturan. Jika pecah, kaca tempered akan hancur menjadi fragmen-fragmen kecil yang tumpul, mengurangi risiko cedera serius.",
     heroImage: "/assets/images/product-a-hero.jpg",
     additionalImage: "/assets/images/product-a-additional.jpg",
     advantages: [
-      "Kualitas tinggi dan bahan premium",
-      "Tahan lama dengan garansi 5 tahun",
-      "Desain modern dan ergonomis",
-      "Ramah lingkungan dan hemat energi",
-      "Teknologi terbaru dengan fitur canggih",
+      "Kekuatan 4-5 kali lebih tinggi dari kaca biasa",
+      "Lebih tahan terhadap perubahan suhu ekstrem",
+      "Aman jika pecah, karena menjadi butiran kecil",
+      "Ideal untuk aplikasi yang membutuhkan keamanan tinggi",
     ],
     capabilities: [
-      "Efisiensi tinggi dengan konsumsi daya minimal",
-      "Mudah digunakan dengan interface intuitif",
-      "Kompatibel dengan berbagai perangkat",
-      "Maintenance rendah dengan sistem self-cleaning",
-      "Dukungan teknis 24/7",
+      "Digunakan pada pintu, jendela, dan partisi",
+      "Cocok untuk shower screen dan railing tangga",
+      "Aplikasi pada fasad bangunan dan skylight",
+      "Tersedia dalam berbagai ketebalan dan ukuran",
     ],
   },
   {
-    id: "product-b",
-    name: "Product B",
+    id: "laminated",
+    name: "Laminated",
     description:
-      "Produk B merupakan solusi inovatif untuk kebutuhan spesifik Anda, dirancang untuk memberikan performa optimal dalam berbagai kondisi.",
+      "Kaca laminated adalah jenis kaca pengaman yang terdiri dari dua atau lebih lembar kaca yang diikat bersama oleh satu atau lebih lapisan interlayer polivinil butiral (PVB) atau etilen-vinil asetat (EVA). Interlayer ini menjaga fragmen kaca tetap menempel jika pecah, sehingga mengurangi risiko cedera dan mempertahankan integritas struktural. Kaca laminated juga menawarkan perlindungan tambahan terhadap suara, panas, dan sinar UV.",
     heroImage: "/assets/images/product-b-hero.jpg",
     additionalImage: "/assets/images/product-b-additional.jpg",
     advantages: [
-      "Harga kompetitif dengan nilai terbaik",
-      "Performa stabil dan konsisten",
-      "Dukungan produk jangka panjang",
-      "Pilihan warna dan model beragam",
+      "Keamanan tinggi, tidak langsung pecah berhamburan",
+      "Mengurangi transmisi suara (peredam bising)",
+      "Melindungi dari sinar UV berbahaya",
+      "Tahan terhadap upaya pembobolan",
     ],
     capabilities: [
-      "Aplikasi luas di berbagai industri",
-      "Instalasi cepat dan mudah",
-      "Adaptif terhadap perubahan kebutuhan",
-      "Integrasi dengan sistem existing",
+      "Digunakan untuk jendela anti-peluru dan skylight",
+      "Ideal untuk fasad bangunan dan partisi keamanan",
+      "Aplikasi pada lantai kaca dan tangga",
+      "Tersedia dengan berbagai jenis interlayer",
     ],
   },
   {
-    id: "product-c",
-    name: "Product C",
+    id: "insulating",
+    name: "Insulating",
     description:
-      "Produk C menghadirkan revolusi baru dalam kategori produk sejenis dengan teknologi terdepan dan inovasi terkini.",
+      "Kaca insulating, atau unit kaca terisolasi (IGU), terdiri dari dua atau lebih panel kaca yang dipisahkan oleh ruang udara atau gas inert (seperti argon atau kripton) yang disegel. Ruang ini berfungsi sebagai penghalang termal, mengurangi perpindahan panas antara bagian dalam dan luar bangunan. Hasilnya adalah efisiensi energi yang lebih baik, kenyamanan termal yang meningkat, dan pengurangan kondensasi.",
     heroImage: "/assets/images/product-c-hero.jpg",
     additionalImage: "/assets/images/product-c-additional.jpg",
     advantages: [
-      "Ketahanan ekstra terhadap kondisi ekstrim",
-      "Desain futuristik dan stylish",
-      "Fitur keamanan tingkat tinggi",
-      "Customizable sesuai kebutuhan",
+      "Efisiensi energi tinggi, hemat biaya pendingin/pemanas",
+      "Mengurangi kondensasi pada permukaan kaca",
+      "Peredam suara yang efektif",
+      "Meningkatkan kenyamanan termal dalam ruangan",
     ],
     capabilities: [
-      "Operasional 24 jam non-stop",
-      "Monitoring real-time",
-      "Update firmware otomatis",
-      "Multi-user access control",
+      "Cocok untuk bangunan residensial dan komersial",
+      "Digunakan pada jendela dan pintu hemat energi",
+      "Tersedia dengan berbagai kombinasi kaca",
+      "Dapat diisi dengan gas inert untuk performa optimal",
+    ],
+  },
+  {
+    id: "bending",
+    name: "Bending",
+    description:
+      "Kaca bending adalah kaca yang dibentuk melengkung melalui proses pemanasan hingga titik lunak dan kemudian dibentuk sesuai cetakan yang diinginkan. Proses ini memungkinkan penciptaan desain arsitektur yang unik dan estetis, memberikan kesan modern dan dinamis pada bangunan. Kaca bending sering digunakan untuk fasad melengkung, skylight, dan elemen interior yang membutuhkan bentuk non-linear.",
+    heroImage: "/assets/images/product-d-hero.jpg",
+    additionalImage: "/assets/images/product-d-additional.jpg",
+    advantages: [
+      "Desain arsitektur yang unik dan estetis",
+      "Memberikan kesan modern dan dinamis",
+      "Fleksibilitas dalam bentuk dan ukuran",
+      "Meningkatkan daya tarik visual bangunan",
+    ],
+    capabilities: [
+      "Aplikasi pada fasad bangunan melengkung",
+      "Digunakan untuk skylight dan kanopi",
+      "Ideal untuk partisi interior dan railing",
+      "Tersedia dalam berbagai radius kelengkungan",
+    ],
+  },
+  {
+    id: "sandblast",
+    name: "Sandblast",
+    description:
+      "Kaca sandblast adalah kaca yang permukaannya diukir atau dihaluskan menggunakan semburan pasir bertekanan tinggi, menciptakan efek buram atau doff. Proses ini menghasilkan tampilan yang elegan dan memberikan privasi tanpa menghalangi cahaya sepenuhnya. Kaca sandblast dapat diaplikasikan dengan berbagai pola dan desain, menjadikannya pilihan populer untuk dekorasi interior dan eksterior.",
+    heroImage: "/assets/images/product-e-hero.jpg",
+    additionalImage: "/assets/images/product-e-additional.jpg",
+    advantages: [
+      "Memberikan privasi tanpa mengurangi cahaya",
+      "Tampilan elegan dan artistik",
+      "Berbagai pilihan pola dan desain",
+      "Mudah dibersihkan dan dirawat",
+    ],
+    capabilities: [
+      "Cocok untuk partisi kamar mandi dan pintu",
+      "Digunakan pada jendela dan cermin dekoratif",
+      "Aplikasi pada signage dan logo perusahaan",
+      "Dapat dikombinasikan dengan jenis kaca lain",
+    ],
+  },
+  {
+    id: "bevel",
+    name: "Bevel",
+    description:
+      "Kaca bevel adalah kaca yang tepiannya dipotong miring dengan sudut tertentu, menciptakan efek prisma yang memantulkan cahaya dan memberikan tampilan mewah. Proses beveling menambah dimensi dan kedalaman pada kaca, menjadikannya pilihan populer untuk cermin, pintu, dan panel dekoratif. Efek pantulan cahaya pada tepian bevel menciptakan kilauan yang menarik dan meningkatkan estetika ruangan.",
+    heroImage: "/assets/images/product-f-hero.jpg",
+    additionalImage: "/assets/images/product-f-additional.jpg",
+    advantages: [
+      "Tampilan mewah dan elegan",
+      "Menciptakan efek pantulan cahaya yang indah",
+      "Menambah dimensi pada kaca",
+      "Meningkatkan nilai estetika interior",
+    ],
+    capabilities: [
+      "Ideal untuk cermin dekoratif dan bingkai foto",
+      "Digunakan pada pintu kaca dan panel kabinet",
+      "Aplikasi pada meja kaca dan rak display",
+      "Tersedia dalam berbagai lebar bevel",
     ],
   },
 ];
@@ -75,39 +133,46 @@ const products = [
 // Carousel products
 const carouselProducts = [
   {
-    id: "product-a",
-    name: "Product A",
+    id: "tempered",
+    name: "Tempered",
     shortDescription:
-      "Solusi premium dengan teknologi terkini untuk kebutuhan high-end",
-    image: "/assets/images/product-a.jpg",
+      "Kaca pengaman dengan kekuatan tinggi dan aman jika pecah.",
+    image: "assets/images/tempered.jpeg",
   },
   {
-    id: "product-b",
-    name: "Product B",
+    id: "laminated",
+    name: "Laminated",
     shortDescription:
-      "Pilihan tepat untuk performa optimal dengan harga terjangkau",
-    image: "/assets/images/product-b.jpg",
+      "Kaca pengaman dengan interlayer untuk keamanan dan peredam suara.",
+    image: "/assets/images/",
   },
   {
-    id: "product-c",
-    name: "Product C",
+    id: "insulating",
+    name: "Insulating",
     shortDescription:
-      "Inovasi terbaru dengan desain futuristik dan fitur canggih",
+      "Kaca hemat energi dengan isolasi termal dan peredam suara.",
     image: "/assets/images/product-c.jpg",
   },
   {
-    id: "product-d",
-    name: "Product D",
+    id: "bending",
+    name: "Bending",
     shortDescription:
-      "Produk spesialis untuk aplikasi khusus dengan presisi tinggi",
+      "Kaca melengkung untuk desain arsitektur modern dan unik.",
     image: "/assets/images/product-d.jpg",
   },
   {
-    id: "product-e",
-    name: "Product E",
+    id: "sandblast",
+    name: "Sandblast",
     shortDescription:
-      "Sistem terintegrasi untuk otomatisasi penuh proses bisnis Anda",
+      "Kaca buram untuk privasi dan dekorasi dengan berbagai pola.",
     image: "/assets/images/product-e.jpg",
+  },
+  {
+    id: "bevel",
+    name: "Bevel",
+    shortDescription:
+      "Kaca dengan tepian miring untuk tampilan mewah dan efek cahaya.",
+    image: "/assets/images/product-f.jpg",
   },
 ];
 
@@ -145,7 +210,6 @@ export default function ProductDetail() {
   return (
     <div className="bg-white min-h-screen flex flex-col">
       <Navbar />
-
       {/* Hero Section - Full width with constrained content */}
       <section className="w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 flex flex-col md:flex-row items-center gap-12">
@@ -157,9 +221,15 @@ export default function ProductDetail() {
             <p className="text-gray-700 text-lg leading-relaxed">
               {product.description}
             </p>
-            <button className="bg-[#BF8B30] hover:bg-[#a46f26] text-white font-medium py-3 px-8 rounded-lg transition duration-300 shadow-md">
-              Konsultasi Sekarang
-            </button>
+            <a
+              href="https://wa.me/6281234567890" // Ganti dengan nomor WhatsApp Anda
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="bg-[#BF8B30] hover:bg-[#a46f26] text-white font-medium mt-5 py-3 px-8 rounded-lg transition duration-300 shadow-md">
+                Konsultasi Sekarang
+              </button>
+            </a>
           </div>
 
           {/* Hero Image Right */}
@@ -172,7 +242,6 @@ export default function ProductDetail() {
           </div>
         </div>
       </section>
-
       {/* Features Section - Full width with background */}
       <section className="w-full bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
@@ -217,7 +286,6 @@ export default function ProductDetail() {
           </div>
         </div>
       </section>
-
       {/* Related Products Carousel */}
       <section className="w-full py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -280,7 +348,6 @@ export default function ProductDetail() {
           </div>
         </div>
       </section>
-
       {/* Contant Section */}
       <section className="relative w-full h-[70vh] mt-20">
         <img
@@ -308,8 +375,9 @@ export default function ProductDetail() {
             Chat With Us
           </a>
         </div>
-      </section> <br /><br />
-
+      </section>{" "}
+      <br />
+      <br />
       <Footer />
     </div>
   );

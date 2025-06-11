@@ -6,11 +6,12 @@ import phoneIcon from "../assets/icons/phone-call-2.png";
 import logo from "../assets/images/logo.png";
 
 const products = [
-  { id: "product-a", name: "Product A" },
-  { id: "product-b", name: "Product B" },
-  { id: "product-c", name: "Product C" },
-  { id: "product-d", name: "Product D" }, 
-  { id: "product-e", name: "Product E" },
+  { id: "tempered", name: "Tempered" },
+  { id: "laminated", name: "Laminated" },
+  { id: "insulating", name: "Insulating" },
+  { id: "bending", name: "Bending" }, 
+  { id: "sandblast", name: "Sandblast" },
+  { id: "bevel", name: "Bevel" },
 ];
 
 export default function Navbar() {
@@ -72,7 +73,7 @@ export default function Navbar() {
             </Link>
             {isProductOpen && (
               <div className="absolute top-full mt-2 w-52 bg-white shadow-lg rounded-md py-2 z-50">
-                {products.slice(0, 3).map((prod) => (
+                {products.map((prod) => (
                   <Link
                     key={prod.id}
                     to={`/product/${prod.id}`}
@@ -150,7 +151,7 @@ export default function Navbar() {
 
             {isSidebarProductOpen && (
               <div className="pl-4 mt-2 space-y-2">
-                {products.slice(0, 3).map((prod) => (
+                {products.map((prod) => (
                   <Link
                     key={prod.id}
                     to={`/product/${prod.id}`}
