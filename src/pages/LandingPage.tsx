@@ -33,15 +33,22 @@ function App() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(false);
 
   const handlePrev = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    );
+    setFade(true); // Fade out first
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+      setFade(false); // Fade back in
+    }, 250); // Short delay for smoother effect
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    setFade(true); // Fade out first
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+      setFade(false); // Fade back in
+    }, 250);
   };
 
   useEffect(() => {
@@ -137,17 +144,21 @@ function App() {
               <div className="flex justify-center mb-8 select-none">
                 <img src={quoteIcon} alt="Quote icon" className="h-12" />
               </div>
-
-              {/* Testimoni: teks lebih besar dan proporsional */}
-              <p className="text-lg md:text-2xlunderline underline-offset-6 mb-8 leading-relaxed font-serif">
-                {testimonials[currentIndex].quote}
-              </p>
-              <p className="font-semibold text-black text-lg md:text-xl">
-                {testimonials[currentIndex].name}, Kontraktor
-              </p>
-              <p className="mt-2 text-sm md:text-base font-medium text-gray-800">
-                Lihat {testimonials[currentIndex].project} →
-              </p>
+              <div
+                className={`transition-opacity duration-500 ease-in-out ${
+                  fade ? "opacity-0" : "opacity-100"
+                }`}
+              >
+                <p className="text-lg md:text-2xl underline underline-offset-6 mb-8 leading-relaxed font-serif">
+                  {testimonials[currentIndex].quote}
+                </p>
+                <p className="font-semibold text-black text-lg md:text-xl">
+                  {testimonials[currentIndex].name}, Kontraktor
+                </p>
+                <p className="mt-2 text-sm md:text-base font-medium text-gray-800">
+                  Lihat {testimonials[currentIndex].project} →
+                </p>
+              </div>
 
               {/* Tombol navigasi desktop */}
               <div className="hidden md:flex absolute inset-y-1/2 -translate-y-1/2 justify-between w-full px-4">
@@ -166,9 +177,7 @@ function App() {
                     key={idx}
                     onClick={() => setCurrentIndex(idx)}
                     className={`w-4 h-4 rounded-full border-2 transition-all duration-300 ${
-                      idx === currentIndex
-                        ? "bg-gray-800 border-gray-800"
-                        : "bg-transparent border-gray-400"
+                      idx === currentIndex ? "bg-gray-800 border-gray-800" : "bg-transparent border-gray-400"
                     }`}
                     aria-label={`Go to testimonial ${idx + 1}`}
                   />
@@ -176,6 +185,7 @@ function App() {
               </div>
             </div>
           </section>
+
           {/* New Section: Image, Question, Title, Description, Button (Duplicate) */}
           <section className="p-4 flex flex-col md:flex-row md:items-center md:justify-center">
             {/* Teks - 30% saat desktop */}
