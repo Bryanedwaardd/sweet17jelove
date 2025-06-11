@@ -100,7 +100,7 @@ export default function Footer() {
                   className="w-10 h-10 border rounded-full flex items-center justify-center"
                 >
                   <img
-                    src={`src/assets/icons/${social.name}.png`}
+                    src={`/src/assets/icons/${social.name}.png`}
                     alt={social.name}
                     className="w-6 h-6"
                   />
@@ -121,7 +121,7 @@ export default function Footer() {
                   onClick={() => handleNavigation(item.action)}
                 >
                   <img
-                    src={`src/assets/icons/${item.icon}.png`}
+                    src={`/src/assets/icons/${item.icon}.png`}
                     alt={item.icon}
                     className="w-5 h-5"
                   />
@@ -173,7 +173,7 @@ export default function Footer() {
             {/* KANAN: Contact Info */}
             <div className="flex flex-col gap-4">
               {[
-                { label: "Find Us", icon: "location", action: "https://maps.google.com/?q=Jl. Jendral Sudirman No.88, Jakarta" },
+                { label: "Find Us", icon: "location", action: "https://maps.app.goo.gl/GZrSFCN8su7YcnTB8" },
                 { label: "Our Email", icon: "mail", action: "mailto:bryanwidjaja2@gmail.com" },
                 { label: "Contact Us", icon: "phone", action: "/contact" }
               ].map((item, i) => (
@@ -183,7 +183,7 @@ export default function Footer() {
                   onClick={() => handleNavigation(item.action)}
                 >
                   <img
-                    src={`src/assets/icons/${item.icon}.png`}
+                    src={`/src/assets/icons/${item.icon}.png`}
                     alt={item.icon}
                     className="w-5 h-5"
                   />
@@ -201,10 +201,10 @@ export default function Footer() {
           {/* Sosial Media - Desktop */}
           <div className="hidden md:flex gap-4">
             {[
-              { name: "facebook", url: "https://facebook.com/placeholder" },
-              { name: "instagram", url: "https://instagram.com/placeholder" },
+              { name: "facebook", url: "https://www.facebook.com/sunkaca.id/" },
+              { name: "instagram", url: "https://www.instagram.com/sunkaca.id/" },
               { name: "youtube", url: "https://youtube.com/placeholder" },
-              { name: "whatsapp", url: "https://wa.me/6281234567890" }
+              { name: "whatsapp", url: "https://wa.me/82210179222" }
             ].map((social, i) => (
               <a
                 key={i}
@@ -214,7 +214,7 @@ export default function Footer() {
                 className="w-10 h-10 border rounded-full flex items-center justify-center"
               >
                 <img
-                  src={`src/assets/icons/${social.name}.png`}
+                  src={`/src/assets/icons/${social.name}.png`}
                   alt={social.name}
                   className="w-6 h-6"
                 />
