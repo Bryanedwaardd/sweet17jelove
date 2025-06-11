@@ -295,7 +295,7 @@ export default function ProductDetail() {
             eiusmod tempor incididunt.
           </p>
           <a
-            href="https://wa.me/6289659798910" // Ganti dengan nomor WA tujuan
+            href="https://wa.me/6282210179222" //sudah diganti
             target="_blank"
             rel="noopener noreferrer"
             className="bg-yellow-700 hover:bg-yellow-800 text-white font-semibold py-3 px-6 rounded-full flex items-center gap-2"

@@ -204,7 +204,7 @@ export default function Footer() {
               { name: "facebook", url: "https://www.facebook.com/sunkaca.id/" },
               { name: "instagram", url: "https://www.instagram.com/sunkaca.id/" },
               { name: "youtube", url: "https://youtube.com/placeholder" },
-              { name: "whatsapp", url: "https://wa.me/82210179222" }
+              { name: "whatsapp", url: "https://wa.me/6282210179222" }
             ].map((social, i) => (
               <a
                 key={i}
