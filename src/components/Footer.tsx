@@ -1,18 +1,25 @@
 import React, { useState } from "react";
-import dropdownIcon from "../assets/icons/down-arrow.png"; // sesuaikan pathnya
+import { useNavigate } from "react-router-dom";
+import dropdownIcon from "../assets/icons/down-arrow.png";
 
 const dropdownData = [
   {
     title: "Tentang Kami",
-    items: ["Our Story"],
+    items: [
+      { name: "Our Story", link: "/about" }
+    ],
   },
   {
     title: "Bantuan",
-    items: ["Pusat Bantuan", "Hubungi Profesional"],
+    items: [
+      { name: "Pusat Bantuan", link: "https://wa.me/6281234567890" }, // Ganti dengan nomor WhatsApp Anda
+      { name: "Hubungi Profesional", link: "/contact" }
+    ],
   },
 ];
 
 export default function Footer() {
+  const navigate = useNavigate();
   const [openDropdowns, setOpenDropdowns] = useState<string[]>([]);
 
   const toggleDropdown = (title: string) => {
@@ -21,6 +28,14 @@ export default function Footer() {
         ? prev.filter((t) => t !== title)
         : [...prev, title]
     );
+  };
+
+  const handleNavigation = (link: string) => {
+    if (link.startsWith("http") || link.startsWith("mailto")) {
+      window.open(link, "_blank");
+    } else {
+      navigate(link);
+    }
   };
 
   return (
@@ -48,8 +63,12 @@ export default function Footer() {
               {openDropdowns.includes(section.title) && (
                 <ul className="mt-2 pl-4 space-y-2 text-gray-700 text-sm">
                   {section.items.map((item, i) => (
-                    <li key={i} className="hover:underline cursor-pointer">
-                      {item}
+                    <li 
+                      key={i} 
+                      className="hover:underline cursor-pointer"
+                      onClick={() => handleNavigation(item.link)}
+                    >
+                      {item.name}
                     </li>
                   ))}
                 </ul>
@@ -67,32 +86,40 @@ export default function Footer() {
           <div className="flex justify-between md:hidden">
             {/* Sosial Media - Mobile */}
             <div className="flex gap-4">
-              {["facebook", "instagram", "youtube", "whatsapp"].map(
-                (name, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="w-10 h-10 border rounded-full flex items-center justify-center"
-                  >
-                    <img
-                      src={`src/assets/icons/${name}.png`}
-                      alt={name}
-                      className="w-6 h-6"
-                    />
-                  </a>
-                )
-              )}
+              {[
+                { name: "facebook", url: "https://facebook.com/placeholder" },
+                { name: "instagram", url: "https://instagram.com/placeholder" },
+                { name: "youtube", url: "https://youtube.com/placeholder" },
+                { name: "whatsapp", url: "https://wa.me/6281234567890" }
+              ].map((social, i) => (
+                <a
+                  key={i}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 border rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src={`src/assets/icons/${social.name}.png`}
+                    alt={social.name}
+                    className="w-6 h-6"
+                  />
+                </a>
+              ))}
             </div>
 
             {/* Contact Info - Mobile */}
             <div className="flex flex-col gap-4">
               {[
-                { label: "Find Us", icon: "location" },
-                { label: "Product Flyer", icon: "document" },
-                { label: "Our Email", icon: "mail" },
-                { label: "Contact Us", icon: "phone" },
+                { label: "Find Us", icon: "location", action: "https://maps.google.com/?q=Jl. Jendral Sudirman No.88, Jakarta" },
+                { label: "Our Email", icon: "mail", action: "mailto:bryanwidjaja2@gmail.com" },
+                { label: "Contact Us", icon: "phone", action: "/contact" }
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-x-3">
+                <div 
+                  key={i} 
+                  className="flex items-center gap-x-3 cursor-pointer"
+                  onClick={() => handleNavigation(item.action)}
+                >
                   <img
                     src={`src/assets/icons/${item.icon}.png`}
                     alt={item.icon}
@@ -114,7 +141,12 @@ export default function Footer() {
               <div>
                 <h4 className="font-semibold text-xl mb-3">Tentang Kami</h4>
                 <ul className="space-y-2 text-base text-gray-700">
-                  <li>Our Story</li>
+                  <li 
+                    className="hover:underline cursor-pointer"
+                    onClick={() => navigate("/about")}
+                  >
+                    Our Story
+                  </li>
                 </ul>
               </div>
 
@@ -122,8 +154,18 @@ export default function Footer() {
               <div>
                 <h4 className="font-semibold text-xl mb-3">Bantuan</h4>
                 <ul className="space-y-2 text-base text-gray-700">
-                  <li>Pusat Bantuan</li>
-                  <li>Hubungi Profesional</li>
+                  <li 
+                    className="hover:underline cursor-pointer"
+                    onClick={() => window.open("https://wa.me/6281234567890", "_blank")}
+                  >
+                    Pusat Bantuan
+                  </li>
+                  <li 
+                    className="hover:underline cursor-pointer"
+                    onClick={() => navigate("/contact")}
+                  >
+                    Hubungi Profesional
+                  </li>
                 </ul>
               </div>
             </div>
@@ -131,12 +173,15 @@ export default function Footer() {
             {/* KANAN: Contact Info */}
             <div className="flex flex-col gap-4">
               {[
-                { label: "Find Us", icon: "location" },
-                { label: "Product Flyer", icon: "document" },
-                { label: "Our Email", icon: "mail" },
-                { label: "Contact Us", icon: "phone" },
+                { label: "Find Us", icon: "location", action: "https://maps.google.com/?q=Jl. Jendral Sudirman No.88, Jakarta" },
+                { label: "Our Email", icon: "mail", action: "mailto:bryanwidjaja2@gmail.com" },
+                { label: "Contact Us", icon: "phone", action: "/contact" }
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-x-3">
+                <div 
+                  key={i} 
+                  className="flex items-center gap-x-3 cursor-pointer"
+                  onClick={() => handleNavigation(item.action)}
+                >
                   <img
                     src={`src/assets/icons/${item.icon}.png`}
                     alt={item.icon}
@@ -155,21 +200,26 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-t border-gray-300 pt-4 md:px-12">
           {/* Sosial Media - Desktop */}
           <div className="hidden md:flex gap-4">
-            {["facebook", "instagram", "youtube", "whatsapp"].map(
-              (name, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 border rounded-full flex items-center justify-center"
-                >
-                  <img
-                    src={`src/assets/icons/${name}.png`}
-                    alt={name}
-                    className="w-6 h-6"
-                  />
-                </a>
-              )
-            )}
+            {[
+              { name: "facebook", url: "https://facebook.com/placeholder" },
+              { name: "instagram", url: "https://instagram.com/placeholder" },
+              { name: "youtube", url: "https://youtube.com/placeholder" },
+              { name: "whatsapp", url: "https://wa.me/6281234567890" }
+            ].map((social, i) => (
+              <a
+                key={i}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border rounded-full flex items-center justify-center"
+              >
+                <img
+                  src={`src/assets/icons/${social.name}.png`}
+                  alt={social.name}
+                  className="w-6 h-6"
+                />
+              </a>
+            ))}
           </div>
 
           {/* Copyright */}

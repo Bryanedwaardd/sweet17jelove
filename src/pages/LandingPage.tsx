@@ -8,8 +8,10 @@ import resumeIcon from "../assets/icons/resume.png";
 import arrowRightIcon from "../assets/icons/arrow-right.png";
 import checkingImage from "../assets/images/checking.jpeg";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import Navbar from "../components/Navbar"; 
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
+import aboutPage from "./AboutPage";
 
 function App() {
   const testimonials = [
@@ -33,7 +35,9 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
   };
 
   const handleNext = () => {
@@ -48,6 +52,7 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
+  const navigate = useNavigate();
 
   return (
     <>
@@ -116,7 +121,10 @@ function App() {
               </p>
 
               {/* Tombol responsif */}
-              <button className="bg-[#F2B03F] text-[#403019] px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-opacity-90 transition duration-300 w-full md:w-[100%]">
+              <button
+                onClick={() => navigate("/about")}
+                className="bg-[#F2B03F] text-[#403019] px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-opacity-90 transition duration-300 w-full md:w-[100%]"
+              >
                 Our Story
               </button>
             </div>
@@ -143,16 +151,10 @@ function App() {
 
               {/* Tombol navigasi desktop */}
               <div className="hidden md:flex absolute inset-y-1/2 -translate-y-1/2 justify-between w-full px-4">
-                <button
-                  onClick={handlePrev}
-                  aria-label="Previous testimonial"
-                >
+                <button onClick={handlePrev} aria-label="Previous testimonial">
                   <ChevronLeftIcon className="h-6 w-6 text-gray-700" />
                 </button>
-                <button
-                  onClick={handleNext}
-                  aria-label="Next testimonial"
-                >
+                <button onClick={handleNext} aria-label="Next testimonial">
                   <ChevronRightIcon className="h-6 w-6 text-gray-700" />
                 </button>
               </div>
@@ -183,7 +185,7 @@ function App() {
               </h3>
 
               <h2 className="text-3xl font-bold mb-4 text-gray-900">
-                SKI Mewujudkan Impian
+                SKI Mewujudkan Impianmu
               </h2>
 
               <p className="text-base text-gray-700 mb-8 leading-relaxed">
@@ -192,8 +194,11 @@ function App() {
                 Sunt in culpa qui officia deser mon mollit anim id est laborum.
               </p>
 
-              <button className="bg-[#F2B03F] w-full text-[#403019] px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-opacity-90 transition duration-300">
-                Lihat Detail
+              <button
+                onClick={() => navigate("/product")}
+                className="bg-[#F2B03F] text-[#403019] px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-opacity-90 transition duration-300 w-full md:w-[100%]"
+              >
+                Lihat Produk
               </button>
             </div>
 
@@ -220,7 +225,11 @@ function App() {
 
             <div className="flex flex-col md:flex-row justify-center items-center md:space-x-4 space-y-4 md:space-y-0">
               {/* Card: Galeri Proyek */}
-              <div className="bg-white p-6 rounded-lg shadow-md w-full md:w-1/2 flex items-center justify-between">
+              <div
+                onClick={() => navigate("/project")}
+                className="bg-white p-6 rounded-lg shadow-md w-full md:w-1/2 flex items-center justify-between cursor-pointer 
+              transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg active:scale-100"
+              >
                 <div className="flex items-center">
                   <img
                     src={dashboardIcon}
@@ -234,15 +243,21 @@ function App() {
                     </p>
                   </div>
                 </div>
-                <img
-                  src={arrowRightIcon}
-                  alt="Arrow Right"
-                  className="h-6 w-6"
-                />
+                <div className="transform transition-transform duration-300 group-hover:translate-x-1">
+                  <img
+                    src={arrowRightIcon}
+                    alt="Arrow Right"
+                    className="h-6 w-6"
+                  />
+                </div>
               </div>
 
               {/* Card: Bantuan Profesional */}
-              <div className="bg-white p-6 rounded-lg shadow-md w-full md:w-1/2 flex items-center justify-between">
+              <div
+                onClick={() => navigate("/contact")}
+                className="bg-white p-6 rounded-lg shadow-md w-full md:w-1/2 flex items-center justify-between cursor-pointer 
+              transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg active:scale-100"
+              >
                 <div className="flex items-center">
                   <img
                     src={resumeIcon}
@@ -258,11 +273,13 @@ function App() {
                     </p>
                   </div>
                 </div>
-                <img
-                  src={arrowRightIcon}
-                  alt="Arrow Right"
-                  className="h-6 w-6"
-                />
+                <div className="transform transition-transform duration-300 group-hover:translate-x-1">
+                  <img
+                    src={arrowRightIcon}
+                    alt="Arrow Right"
+                    className="h-6 w-6"
+                  />
+                </div>
               </div>
             </div>
           </section>

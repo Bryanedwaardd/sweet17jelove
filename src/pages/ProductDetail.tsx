@@ -3,6 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaCheck, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import contactImage from "../assets/images/contact.jpeg";
+import phoneIcon from "../assets/icons/phone-call-2.png";
 
 // Product data
 const products = [
@@ -18,14 +20,14 @@ const products = [
       "Tahan lama dengan garansi 5 tahun",
       "Desain modern dan ergonomis",
       "Ramah lingkungan dan hemat energi",
-      "Teknologi terbaru dengan fitur canggih"
+      "Teknologi terbaru dengan fitur canggih",
     ],
     capabilities: [
       "Efisiensi tinggi dengan konsumsi daya minimal",
       "Mudah digunakan dengan interface intuitif",
       "Kompatibel dengan berbagai perangkat",
       "Maintenance rendah dengan sistem self-cleaning",
-      "Dukungan teknis 24/7"
+      "Dukungan teknis 24/7",
     ],
   },
   {
@@ -39,13 +41,13 @@ const products = [
       "Harga kompetitif dengan nilai terbaik",
       "Performa stabil dan konsisten",
       "Dukungan produk jangka panjang",
-      "Pilihan warna dan model beragam"
+      "Pilihan warna dan model beragam",
     ],
     capabilities: [
       "Aplikasi luas di berbagai industri",
       "Instalasi cepat dan mudah",
       "Adaptif terhadap perubahan kebutuhan",
-      "Integrasi dengan sistem existing"
+      "Integrasi dengan sistem existing",
     ],
   },
   {
@@ -59,13 +61,13 @@ const products = [
       "Ketahanan ekstra terhadap kondisi ekstrim",
       "Desain futuristik dan stylish",
       "Fitur keamanan tingkat tinggi",
-      "Customizable sesuai kebutuhan"
+      "Customizable sesuai kebutuhan",
     ],
     capabilities: [
       "Operasional 24 jam non-stop",
       "Monitoring real-time",
       "Update firmware otomatis",
-      "Multi-user access control"
+      "Multi-user access control",
     ],
   },
 ];
@@ -75,31 +77,36 @@ const carouselProducts = [
   {
     id: "product-a",
     name: "Product A",
-    shortDescription: "Solusi premium dengan teknologi terkini untuk kebutuhan high-end",
+    shortDescription:
+      "Solusi premium dengan teknologi terkini untuk kebutuhan high-end",
     image: "/assets/images/product-a.jpg",
   },
   {
     id: "product-b",
     name: "Product B",
-    shortDescription: "Pilihan tepat untuk performa optimal dengan harga terjangkau",
+    shortDescription:
+      "Pilihan tepat untuk performa optimal dengan harga terjangkau",
     image: "/assets/images/product-b.jpg",
   },
   {
     id: "product-c",
     name: "Product C",
-    shortDescription: "Inovasi terbaru dengan desain futuristik dan fitur canggih",
+    shortDescription:
+      "Inovasi terbaru dengan desain futuristik dan fitur canggih",
     image: "/assets/images/product-c.jpg",
   },
   {
     id: "product-d",
     name: "Product D",
-    shortDescription: "Produk spesialis untuk aplikasi khusus dengan presisi tinggi",
+    shortDescription:
+      "Produk spesialis untuk aplikasi khusus dengan presisi tinggi",
     image: "/assets/images/product-d.jpg",
   },
   {
     id: "product-e",
     name: "Product E",
-    shortDescription: "Sistem terintegrasi untuk otomatisasi penuh proses bisnis Anda",
+    shortDescription:
+      "Sistem terintegrasi untuk otomatisasi penuh proses bisnis Anda",
     image: "/assets/images/product-e.jpg",
   },
 ];
@@ -114,7 +121,9 @@ export default function ProductDetail() {
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow flex items-center justify-center pt-30">
-          <p className="text-red-600 text-xl font-semibold">Produk tidak ditemukan.</p>
+          <p className="text-red-600 text-xl font-semibold">
+            Produk tidak ditemukan.
+          </p>
         </main>
         <Footer />
       </div>
@@ -142,8 +151,12 @@ export default function ProductDetail() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 flex flex-col md:flex-row items-center gap-12">
           {/* Text Left */}
           <div className="md:w-1/2 w-full space-y-8">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">{product.name}</h1>
-            <p className="text-gray-700 text-lg leading-relaxed">{product.description}</p>
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+              {product.name}
+            </h1>
+            <p className="text-gray-700 text-lg leading-relaxed">
+              {product.description}
+            </p>
             <button className="bg-[#BF8B30] hover:bg-[#a46f26] text-white font-medium py-3 px-8 rounded-lg transition duration-300 shadow-md">
               Konsultasi Sekarang
             </button>
@@ -209,7 +222,9 @@ export default function ProductDetail() {
       <section className="w-full py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Produk Lainnya</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Produk Lainnya
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Temukan produk lainnya yang mungkin sesuai dengan kebutuhan Anda
             </p>
@@ -250,7 +265,9 @@ export default function ProductDetail() {
                         />
                       </div>
                       <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-3 text-gray-900">{name}</h3>
+                        <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                          {name}
+                        </h3>
                         <p className="text-gray-700 mb-4">{shortDescription}</p>
                         <button className="text-[#BF8B30] font-medium hover:text-[#a46f26] transition">
                           Lihat Detail →
@@ -263,6 +280,35 @@ export default function ProductDetail() {
           </div>
         </div>
       </section>
+
+      {/* Contant Section */}
+      <section className="relative w-full h-[70vh] mt-20">
+        <img
+          src={contactImage}
+          alt="Contact Us Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center text-white px-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">CONTACT US</h2>
+          <p className="text-lg md:text-xl max-w-xl mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elite, sed do
+            eiusmod tempor incididunt.
+          </p>
+          <a
+            href="https://wa.me/6289659798910" // Ganti dengan nomor WA tujuan
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-yellow-700 hover:bg-yellow-800 text-white font-semibold py-3 px-6 rounded-full flex items-center gap-2"
+          >
+            <img
+              src={phoneIcon}
+              className="h-5 w-5 text-white"
+              alt="WhatsApp Icon"
+            ></img>
+            Chat With Us
+          </a>
+        </div>
+      </section> <br /><br />
 
       <Footer />
     </div>
