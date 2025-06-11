@@ -1,14 +1,18 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "instant" // atau "smooth" untuk animasi scroll
-    });
+    const scrollStep = () => {
+      const currentPosition = window.scrollY;
+      if (currentPosition > 0) {
+        window.requestAnimationFrame(scrollStep);
+        window.scrollTo(0, currentPosition - currentPosition / 10);
+      }
+    };
+    scrollStep();
   }, [pathname]);
 
   return null;

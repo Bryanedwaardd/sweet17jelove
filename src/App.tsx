@@ -6,10 +6,13 @@ import ProductDetail from "./pages/ProductDetail";
 import ContactUsPage from "./pages/ContactUsPage";
 import ProjectPage from "./pages/ProjectPage";
 import ProcessPage from "./pages/ProcessPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function App() {
   return (
+    <>
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/product" element={<ProductPage />} />
@@ -19,6 +22,7 @@ function App() {
       <Route path="/process" element={<ProcessPage />} />
       <Route path="/about" element={<AboutPage />} />
     </Routes>
+    </>
   );
 }
 
