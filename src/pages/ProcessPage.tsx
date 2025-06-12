@@ -38,7 +38,7 @@ export default function ProcessPage() {
       {/* Process Section 1 */}
       <section className="flex flex-col md:flex-row items-center max-w-6xl mx-auto px-4 gap-8 py-10">
         <img
-          src="/assets/images/process-1.jpeg"
+          src={processHeroImage}
           alt="Process 1"
           className="w-full md:w-1/2 h-[320px] object-cover rounded-2xl shadow-lg"
         />
@@ -67,7 +67,7 @@ export default function ProcessPage() {
           </p>
         </div>
         <img
-          src="/assets/images/process-2.jpeg"
+          src={processHeroImage}
           alt="Process 2"
           className="w-full md:w-1/2 h-[320px] object-cover rounded-2xl shadow-lg"
         />
@@ -134,12 +134,12 @@ export default function ProcessPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm">
           {[
             "Toko Kaca / Pelanggan Individu",
-            "Maruni Glass",
+            "Sun Kaca Indonesia",
             "Pelanggan mengantar kaca",
             "Admin & Penjualan",
             "Proses: Temp, Lami, IGU, Bevel, dll",
             "Tunggu notifikasi",
-            "Pick-up kaca dari Maruni",
+            "Pick-up kaca dari SKI",
             "Nikmati kualitas terbaik",
           ].map((item, idx) => (
             <div key={idx} className="flex items-start gap-3">

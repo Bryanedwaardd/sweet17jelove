@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import ProductCard from "../components/ProductCard";
 import productImage from "../assets/images/product.jpeg";
 import contactImage from "../assets/images/contact.jpeg";
 import phoneIcon from "../assets/icons/phone-call-2.png";
@@ -15,42 +14,42 @@ type Product = {
 
 const products: Product[] = [
   {
-    image: "/images/tempered.jpg",
+    image: "./src/assets/images/tempered.jpeg", 
     title: "Kaca Tempered",
     description:
       "Kaca yang diperkuat melalui proses pemanasan, tahan benturan dan panas tinggi.",
     link: "/product/tempered",
   },
   {
-    image: "/images/laminated.jpg",
+    image: "./src/assets/images/tempered.jpeg",
     title: "Kaca Laminated",
     description:
       "Kaca dua lapis dengan lapisan film di antaranya, memberikan keamanan ekstra.",
     link: "/product/laminated",
   },
   {
-    image: "/images/insulating.jpg",
+    image: "./src/assets/images/tempered.jpeg",
     title: "Kaca Insulating",
     description:
       "Kaca berlapis ganda dengan ruang udara di tengah untuk isolasi suhu dan suara.",
     link: "/product/insulating",
   },
   {
-    image: "/images/bending.jpg",
+    image: "./src/assets/images/tempered.jpeg",
     title: "Kaca Bending",
     description:
       "Kaca yang dibentuk secara melengkung untuk desain arsitektur yang elegan.",
     link: "/product/bending",
   },
   {
-    image: "/images/sandblast.jpg",
+    image: "./src/assets/images/tempered.jpeg",
     title: "Kaca Sandblast",
     description:
       "Kaca buram dengan teknik sandblast untuk efek privasi dan estetika ruangan.",
     link: "/product/sandblast",
   },
   {
-    image: "/images/bevel.jpg",
+    image: "./src/assets/images/tempered.jpeg",
     title: "Kaca Bevel",
     description:
       "Kaca dengan potongan tepi miring yang memberikan efek cahaya dan keindahan.",
@@ -102,7 +101,7 @@ export default function ProductPage() {
             <img
               src={product.image}
               alt={product.title}
-              className="h-48 w-full object-cover"
+              className="h-96 w-full object-cover"
             />
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-2">{product.title}</h2>

@@ -11,7 +11,6 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
-import aboutPage from "./AboutPage";
 
 function App() {
   const testimonials = [
@@ -38,7 +37,9 @@ function App() {
   const handlePrev = () => {
     setFade(true); // Fade out first
     setTimeout(() => {
-      setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+      setCurrentIndex(
+        (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      );
       setFade(false); // Fade back in
     }, 250); // Short delay for smoother effect
   };
@@ -60,6 +61,44 @@ function App() {
   }, []);
 
   const navigate = useNavigate();
+
+  interface Stat {
+    label: string;
+    value: number;
+  }
+
+  const stats: Stat[] = [
+    { label: "FACTORIES", value: 3 },
+    { label: "TONNES CAPACITY", value: 40000 },
+    { label: "COMPLETED PROJECT", value: 500 },
+    { label: "HAPPY CUSTOMERS", value: 67 },
+  ];
+
+  const CountUp = ({ end }: { end: number }) => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+      let start = 0;
+      const duration = 3000; // 3 detik
+      const steps = 60; // jumlah frame
+      const increment = Math.ceil(end / steps);
+      const intervalTime = Math.floor(duration / steps);
+
+      const counter = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          setCount(end);
+          clearInterval(counter);
+        } else {
+          setCount(start);
+        }
+      }, intervalTime);
+
+      return () => clearInterval(counter);
+    }, [end]);
+
+    return <span>{count.toLocaleString()}</span>;
+  };
 
   return (
     <>
@@ -137,6 +176,23 @@ function App() {
             </div>
           </section>
 
+          {/* Statistic Section */}
+          <div className="bg-white py-12">
+            <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              {stats.map((stat, index) => (
+                <div key={index} className="relative">
+                  {index > 0 && (
+                    <div className="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 h-12 border-l border-gray-300"></div>
+                  )}
+                  <h3 className="text-4xl font-bold text-[#BF8B30]">
+                    <CountUp end={stat.value} />
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-2">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Testimonial Section */}
           <section className="bg-[#F5F3EF] py-16 px-6 md:px-20 flex items-center justify-center">
             <div className="w-full max-w-3xl text-center relative">
@@ -156,7 +212,7 @@ function App() {
                   {testimonials[currentIndex].name}, Kontraktor
                 </p>
                 <p className="mt-2 text-sm md:text-base font-medium text-gray-800">
-                  Lihat {testimonials[currentIndex].project} →
+                  Project {testimonials[currentIndex].project}
                 </p>
               </div>
 
@@ -177,7 +233,9 @@ function App() {
                     key={idx}
                     onClick={() => setCurrentIndex(idx)}
                     className={`w-4 h-4 rounded-full border-2 transition-all duration-300 ${
-                      idx === currentIndex ? "bg-gray-800 border-gray-800" : "bg-transparent border-gray-400"
+                      idx === currentIndex
+                        ? "bg-gray-800 border-gray-800"
+                        : "bg-transparent border-gray-400"
                     }`}
                     aria-label={`Go to testimonial ${idx + 1}`}
                   />

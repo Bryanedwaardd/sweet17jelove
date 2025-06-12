@@ -61,24 +61,38 @@ export default function ProjectPage() {
           oleh orang lain sebagai konsekuensinya.
         </p>
       </section>
-
-      {/* Project Cards Full Width */}
-      <section className="w-full px-2 md:px-6 pb-20">
-        <div className="flex flex-col gap-y-6 md:flex-row md:gap-6">
+      {/* Project Cards Section */}
+      <section className="w-full px-4 md:px-10 py-16 bg-[#fdfaf6]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {cards.map((card, index) => (
-            <div key={index} className="w-full md:w-1/3">
-              <ProjectCard
-                image={card.image}
-                category={card.category}
-                title={card.title}
-                description={card.description}
-              />
+            <div
+              key={index}
+              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group border border-gray-200"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <span className="absolute top-4 left-4 bg-[#BF8B30] text-white text-xs uppercase px-3 py-1 rounded shadow-sm">
+                  {card.category}
+                </span>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-800 group-hover:text-[#BF8B30] transition-colors duration-300 mb-2">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {card.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Contant Section */}
+      {/* Content Section */}
       <section className="relative w-full h-[70vh] mt-20">
         <img
           src={contactImage}

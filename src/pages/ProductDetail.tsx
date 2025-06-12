@@ -13,8 +13,8 @@ const products = [
     name: "Tempered",
     description:
       "Kaca tempered adalah jenis kaca pengaman yang diproses dengan perlakuan panas atau kimia terkontrol untuk meningkatkan kekuatannya dibandingkan kaca biasa. Proses ini menciptakan tekanan kompresi di permukaan luar dan tekanan tarik di bagian dalam, yang membuat kaca tempered jauh lebih kuat dan lebih tahan terhadap benturan. Jika pecah, kaca tempered akan hancur menjadi fragmen-fragmen kecil yang tumpul, mengurangi risiko cedera serius.",
-    heroImage: "/assets/images/product-a-hero.jpg",
-    additionalImage: "/assets/images/product-a-additional.jpg",
+    heroImage: "../src/assets/images/tempered.jpeg",
+    additionalImage: "../src/assets/images/tempered.jpeg",
     advantages: [
       "Kekuatan 4-5 kali lebih tinggi dari kaca biasa",
       "Lebih tahan terhadap perubahan suhu ekstrem",
@@ -33,8 +33,8 @@ const products = [
     name: "Laminated",
     description:
       "Kaca laminated adalah jenis kaca pengaman yang terdiri dari dua atau lebih lembar kaca yang diikat bersama oleh satu atau lebih lapisan interlayer polivinil butiral (PVB) atau etilen-vinil asetat (EVA). Interlayer ini menjaga fragmen kaca tetap menempel jika pecah, sehingga mengurangi risiko cedera dan mempertahankan integritas struktural. Kaca laminated juga menawarkan perlindungan tambahan terhadap suara, panas, dan sinar UV.",
-    heroImage: "/assets/images/product-b-hero.jpg",
-    additionalImage: "/assets/images/product-b-additional.jpg",
+    heroImage: "../src/assets/images/tempered.jpeg",
+    additionalImage: "../src/assets/images/tempered.jpeg",
     advantages: [
       "Keamanan tinggi, tidak langsung pecah berhamburan",
       "Mengurangi transmisi suara (peredam bising)",
@@ -53,8 +53,8 @@ const products = [
     name: "Insulating",
     description:
       "Kaca insulating, atau unit kaca terisolasi (IGU), terdiri dari dua atau lebih panel kaca yang dipisahkan oleh ruang udara atau gas inert (seperti argon atau kripton) yang disegel. Ruang ini berfungsi sebagai penghalang termal, mengurangi perpindahan panas antara bagian dalam dan luar bangunan. Hasilnya adalah efisiensi energi yang lebih baik, kenyamanan termal yang meningkat, dan pengurangan kondensasi.",
-    heroImage: "/assets/images/product-c-hero.jpg",
-    additionalImage: "/assets/images/product-c-additional.jpg",
+    heroImage: "../src/assets/images/tempered.jpeg",
+    additionalImage: "../src/assets/images/tempered.jpeg",
     advantages: [
       "Efisiensi energi tinggi, hemat biaya pendingin/pemanas",
       "Mengurangi kondensasi pada permukaan kaca",
@@ -73,8 +73,8 @@ const products = [
     name: "Bending",
     description:
       "Kaca bending adalah kaca yang dibentuk melengkung melalui proses pemanasan hingga titik lunak dan kemudian dibentuk sesuai cetakan yang diinginkan. Proses ini memungkinkan penciptaan desain arsitektur yang unik dan estetis, memberikan kesan modern dan dinamis pada bangunan. Kaca bending sering digunakan untuk fasad melengkung, skylight, dan elemen interior yang membutuhkan bentuk non-linear.",
-    heroImage: "/assets/images/product-d-hero.jpg",
-    additionalImage: "/assets/images/product-d-additional.jpg",
+    heroImage: "../src/assets/images/tempered.jpeg",
+    additionalImage: "../src/assets/images/tempered.jpeg",
     advantages: [
       "Desain arsitektur yang unik dan estetis",
       "Memberikan kesan modern dan dinamis",
@@ -93,8 +93,8 @@ const products = [
     name: "Sandblast",
     description:
       "Kaca sandblast adalah kaca yang permukaannya diukir atau dihaluskan menggunakan semburan pasir bertekanan tinggi, menciptakan efek buram atau doff. Proses ini menghasilkan tampilan yang elegan dan memberikan privasi tanpa menghalangi cahaya sepenuhnya. Kaca sandblast dapat diaplikasikan dengan berbagai pola dan desain, menjadikannya pilihan populer untuk dekorasi interior dan eksterior.",
-    heroImage: "/assets/images/product-e-hero.jpg",
-    additionalImage: "/assets/images/product-e-additional.jpg",
+    heroImage: "../src/assets/images/tempered.jpeg",
+    additionalImage: "../src/assets/images/tempered.jpeg",
     advantages: [
       "Memberikan privasi tanpa mengurangi cahaya",
       "Tampilan elegan dan artistik",
@@ -113,8 +113,8 @@ const products = [
     name: "Bevel",
     description:
       "Kaca bevel adalah kaca yang tepiannya dipotong miring dengan sudut tertentu, menciptakan efek prisma yang memantulkan cahaya dan memberikan tampilan mewah. Proses beveling menambah dimensi dan kedalaman pada kaca, menjadikannya pilihan populer untuk cermin, pintu, dan panel dekoratif. Efek pantulan cahaya pada tepian bevel menciptakan kilauan yang menarik dan meningkatkan estetika ruangan.",
-    heroImage: "/assets/images/product-f-hero.jpg",
-    additionalImage: "/assets/images/product-f-additional.jpg",
+    heroImage: "../src/assets/images/tempered.jpeg",
+    additionalImage: "../src/assets/images/tempered.jpeg",
     advantages: [
       "Tampilan mewah dan elegan",
       "Menciptakan efek pantulan cahaya yang indah",
@@ -137,42 +137,42 @@ const carouselProducts = [
     name: "Tempered",
     shortDescription:
       "Kaca pengaman dengan kekuatan tinggi dan aman jika pecah.",
-    image: "assets/images/tempered.jpeg",
+    image: "../src/assets/images/tempered.jpeg",
   },
   {
     id: "laminated",
     name: "Laminated",
     shortDescription:
       "Kaca pengaman dengan interlayer untuk keamanan dan peredam suara.",
-    image: "/assets/images/",
+    image: "../src/assets/images/tempered.jpeg",
   },
   {
     id: "insulating",
     name: "Insulating",
     shortDescription:
       "Kaca hemat energi dengan isolasi termal dan peredam suara.",
-    image: "/assets/images/product-c.jpg",
+    image: "../src/assets/images/tempered.jpeg",
   },
   {
     id: "bending",
     name: "Bending",
     shortDescription:
       "Kaca melengkung untuk desain arsitektur modern dan unik.",
-    image: "/assets/images/product-d.jpg",
+    image: "../src/assets/images/tempered.jpeg",
   },
   {
     id: "sandblast",
     name: "Sandblast",
     shortDescription:
       "Kaca buram untuk privasi dan dekorasi dengan berbagai pola.",
-    image: "/assets/images/product-e.jpg",
+    image: "../src/assets/images/tempered.jpeg",
   },
   {
     id: "bevel",
     name: "Bevel",
     shortDescription:
       "Kaca dengan tepian miring untuk tampilan mewah dan efek cahaya.",
-    image: "/assets/images/product-f.jpg",
+    image: "../src/assets/images/tempered.jpeg",
   },
 ];
 

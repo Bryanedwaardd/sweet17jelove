@@ -46,6 +46,73 @@ export default function AboutPage() {
         </section>
       </main>
 
+      {/* WHY WE ARE BEST */}
+      <section className="py-16 px-6 md:px-10 bg-white max-w-6xl mx-auto text-center">
+        <div className="mb-12">
+          <p className="text-xl uppercase tracking-widest text-[#BF8B30] mb-2">
+            — Why We Are Best —
+          </p>
+        </div>
+
+        <div className="flex flex-col items-center gap-6">
+          {/* Baris Atas (2 item) */}
+          <div className="flex flex-wrap justify-center gap-6">
+            {/* Experience */}
+            <div className="w-72 border rounded-lg p-6 hover:shadow-lg transition-all">
+              <div className="text-4xl text-[#BF8B30] mb-4">
+                <i className="fas fa-briefcase"></i>
+              </div>
+              <p className="text-xl font-medium text-gray-800">
+                20 Years of Experience
+              </p>
+            </div>
+
+            {/* Exclusive Partnership */}
+            <div className="w-72 border rounded-lg p-6 hover:shadow-lg transition-all">
+              <div className="text-4xl text-[#BF8B30] mb-4">
+                <i className="fas fa-handshake"></i>
+              </div>
+              <p className="text-xl font-medium text-gray-800">
+                Exclusive Partnership
+              </p>
+            </div>
+          </div>
+
+          {/* Baris Bawah (3 item) */}
+          <div className="flex flex-wrap justify-center gap-6">
+            {/* Best Quality Product */}
+            <div className="w-72 border rounded-lg p-6 hover:shadow-lg transition-all">
+              <div className="text-4xl text-[#BF8B30] mb-4">
+                <i className="fas fa-star"></i>
+              </div>
+              <p className="text-xl font-medium text-gray-800">
+                Best Quality Product
+              </p>
+            </div>
+
+            {/* Business Opportunity */}
+            <div className="w-72 border rounded-lg p-6 hover:shadow-lg transition-all">
+              <div className="text-4xl text-[#BF8B30] mb-4">
+                <i className="fas fa-chart-line"></i>
+              </div>
+              <p className="text-xl font-medium text-gray-800">
+                Business Opportunity
+              </p>
+            </div>
+
+            {/* 24/7 Support */}
+            <div className="w-72 border rounded-lg p-6 hover:shadow-lg transition-all">
+              <div className="text-4xl text-[#BF8B30] mb-4">
+                <i className="fas fa-headset"></i>
+              </div>
+              <p className="text-xl font-medium text-gray-800">
+                24/7 Online Support
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </>
   );
