@@ -131,24 +131,29 @@ export default function ProcessPage() {
         <h2 className="text-3xl font-bold text-center mb-10 text-[#BF8B30]">
           Flow Process
         </h2>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm">
-          {[
-            "Toko Kaca / Pelanggan Individu",
-            "Sun Kaca Indonesia",
-            "Pelanggan mengantar kaca",
-            "Admin & Penjualan",
-            "Proses: Temp, Lami, IGU, Bevel, dll",
-            "Tunggu notifikasi",
-            "Pick-up kaca dari SKI",
-            "Nikmati kualitas terbaik",
-          ].map((item, idx) => (
-            <div key={idx} className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#BF8B30] text-white flex items-center justify-center font-bold">
-                {idx + 1}
+
+        {/* Wrapper Flex untuk centering keseluruhan */}
+        <div className="flex justify-center">
+          {/* Container konten dibatasi lebarnya agar center */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-20 gap-y-6 w-full max-w-4xl">
+            {[
+              "Toko Kaca / Pelanggan Individu",
+              "Sun Kaca Indonesia",
+              "Pelanggan mengantar kaca",
+              "Admin & Penjualan",
+              "Proses: Temp, Lami, IGU, Bevel, dll",
+              "Tunggu notifikasi",
+              "Pick-up kaca dari SKI",
+              "Nikmati kualitas terbaik",
+            ].map((text, i) => (
+              <div key={i} className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#BF8B30] text-white flex items-center justify-center font-bold">
+                  {i + 1}
+                </div>
+                <p className="text-gray-800 font-medium">{text}</p>
               </div>
-              <p className="text-gray-800 font-medium">{item}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

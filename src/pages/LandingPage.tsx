@@ -216,8 +216,8 @@ function App() {
                 </p>
               </div>
 
-              {/* Tombol navigasi desktop */}
-              <div className="hidden md:flex absolute inset-y-1/2 -translate-y-1/2 justify-between w-full px-4">
+              {/* Tombol navigasi mobile & desktop */}
+              <div className="flex absolute inset-y-1/2 -translate-y-1/2 justify-between w-full px-4">
                 <button onClick={handlePrev} aria-label="Previous testimonial">
                   <ChevronLeftIcon className="h-6 w-6 text-gray-700" />
                 </button>
