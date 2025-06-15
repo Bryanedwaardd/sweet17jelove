@@ -132,25 +132,26 @@ export default function ProcessPage() {
           Flow Process
         </h2>
 
-        {/* Wrapper Flex untuk centering keseluruhan */}
         <div className="flex justify-center">
-          {/* Container konten dibatasi lebarnya agar center */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-20 gap-y-6 w-full max-w-4xl">
+          <div className="grid grid-cols-2 gap-x-16 gap-y-6">
             {[
-              "Toko Kaca / Pelanggan Individu",
-              "Sun Kaca Indonesia",
-              "Pelanggan mengantar kaca",
-              "Admin & Penjualan",
-              "Proses: Temp, Lami, IGU, Bevel, dll",
-              "Tunggu notifikasi",
-              "Pick-up kaca dari SKI",
-              "Nikmati kualitas terbaik",
-            ].map((text, i) => (
-              <div key={i} className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-[#BF8B30] text-white flex items-center justify-center font-bold">
-                  {i + 1}
+              "FLOW 1",
+              "FLOW 2",
+              "FLOW 3",
+              "FLOW 4",
+              "FLOW 5",
+              "FLOW 6",
+              "FLOW 7",
+              "FLOW 8",
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center gap-4"
+              >
+                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#BF8B30] text-white font-bold">
+                  {index + 1}
                 </div>
-                <p className="text-gray-800 font-medium">{text}</p>
+                <p className="text-[#0F172A] font-semibold">{item}</p>
               </div>
             ))}
           </div>
