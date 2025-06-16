@@ -76,7 +76,7 @@ export default function ProcessPage() {
       {/* Table Section - Spesifikasi */}
       <section className="bg-gray-50 py-14 px-4">
         <h2 className="text-3xl font-bold text-center mb-8 text-[#BF8B30]">
-          Spesifikasi Kaca
+          Proses Pengerjaan Kaca
         </h2>
         <div className="max-w-6xl mx-auto overflow-x-auto">
           <table className="min-w-full border border-gray-300 text-sm">
@@ -85,7 +85,7 @@ export default function ProcessPage() {
                 <th className="p-3 border">Spesifikasi Kaca</th>
                 {[1, 2, 3, 4, 5, 6, 7].map((day) => (
                   <th key={day} className="p-3 border">
-                    Hari {day}
+                    {day} Hari
                   </th>
                 ))}
               </tr>

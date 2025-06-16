@@ -50,15 +50,15 @@ export default function AboutPage() {
       <section className="py-16 px-6 md:px-10 bg-white max-w-6xl mx-auto text-center">
         <div className="mb-12">
           <p className="text-xl uppercase tracking-widest text-[#BF8B30] mb-2">
-            — Why We Are Best —
+            — Why We Are The Best —
           </p>
         </div>
 
         <div className="flex flex-col items-center gap-6">
           {/* Baris Atas (2 item) */}
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-6 w-full">
             {/* Experience */}
-            <div className="w-72 border rounded-lg p-6 hover:shadow-lg transition-all">
+            <div className="w-72 h-20 pb-10 border rounded-lg p-6 hover:shadow-lg transition-all flex flex-col items-center justify-center">
               <div className="text-4xl text-[#BF8B30] mb-4">
                 <i className="fas fa-briefcase"></i>
               </div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
             </div>
 
             {/* Exclusive Partnership */}
-            <div className="w-72 border rounded-lg p-6 hover:shadow-lg transition-all">
+            <div className="w-72 h-20 pb-10 border rounded-lg p-6 hover:shadow-lg transition-all flex flex-col items-center justify-center">
               <div className="text-4xl text-[#BF8B30] mb-4">
                 <i className="fas fa-handshake"></i>
               </div>
@@ -79,9 +79,9 @@ export default function AboutPage() {
           </div>
 
           {/* Baris Bawah (3 item) */}
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-6 w-full">
             {/* Best Quality Product */}
-            <div className="w-72 border rounded-lg p-6 hover:shadow-lg transition-all">
+            <div className="w-72 h-20 pb-10 border rounded-lg p-6 hover:shadow-lg transition-all flex flex-col items-center justify-center">
               <div className="text-4xl text-[#BF8B30] mb-4">
                 <i className="fas fa-star"></i>
               </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
             </div>
 
             {/* Business Opportunity */}
-            <div className="w-72 border rounded-lg p-6 hover:shadow-lg transition-all">
+            <div className="w-72 h-20 pb-10 border rounded-lg p-6 hover:shadow-lg transition-all flex flex-col items-center justify-center">
               <div className="text-4xl text-[#BF8B30] mb-4">
                 <i className="fas fa-chart-line"></i>
               </div>
@@ -101,7 +101,7 @@ export default function AboutPage() {
             </div>
 
             {/* 24/7 Support */}
-            <div className="w-72 border rounded-lg p-6 hover:shadow-lg transition-all">
+            <div className="w-72 h-20 pb-10 border rounded-lg p-6 hover:shadow-lg transition-all flex flex-col items-center justify-center">
               <div className="text-4xl text-[#BF8B30] mb-4">
                 <i className="fas fa-headset"></i>
               </div>

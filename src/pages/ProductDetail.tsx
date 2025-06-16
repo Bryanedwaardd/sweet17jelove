@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -201,9 +201,9 @@ export default function ProductDetail() {
         prev >= carouselProducts.length - 1 ? 0 : prev + 1
       );
     } else {
-      // Desktop
-      const maxIndex = Math.ceil(carouselProducts.length / 3) - 1;
-      setCarouselIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+      // Desktop - geser 3 item sekaligus
+      const maxIndex = Math.floor(carouselProducts.length / 3);
+      setCarouselIndex((prev) => (prev >= maxIndex - 1 ? 0 : prev + 1));
     }
   };
 
@@ -214,9 +214,9 @@ export default function ProductDetail() {
         prev <= 0 ? carouselProducts.length - 1 : prev - 1
       );
     } else {
-      // Desktop
-      const maxIndex = Math.ceil(carouselProducts.length / 3) - 1;
-      setCarouselIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+      // Desktop - geser 3 item sekaligus
+      const maxIndex = Math.floor(carouselProducts.length / 3);
+      setCarouselIndex((prev) => (prev <= 0 ? maxIndex - 1 : prev - 1));
     }
   };
 
@@ -384,51 +384,47 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            {/* Desktop - Three items */}
-            <div className="hidden md:block overflow-x-hidden">
+            {/* Desktop - 3 items visible at once */}
+            <div className="hidden md:block overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{
-                  transform: `translateX(-${carouselIndex * 100}%)`,
-                  width: `${Math.ceil(carouselProducts.length / 3) * 100}%`,
+                  transform: `translateX(-${
+                    carouselIndex * (100 / (carouselProducts.length / 3))
+                  }%)`,
+                  width: `${carouselProducts.length * (100 / 3)}%`,
                 }}
               >
-                {/* Group products into sets of 3 */}
-                {[...Array(Math.ceil(carouselProducts.length / 3))].map(
-                  (_, groupIndex) => (
+                {carouselProducts.map(
+                  ({ id, name, shortDescription, image }) => (
                     <div
-                      key={groupIndex}
-                      className="flex-shrink-0 w-full grid grid-cols-3 gap-6 px-4"
+                      key={id}
+                      className="w-1/3 px-2" // Setiap card mengambil 1/3 lebar
+                      style={{ width: "calc(100% / 3)" }} // Pastikan lebar tepat 1/3
                     >
-                      {carouselProducts
-                        .slice(groupIndex * 3, groupIndex * 3 + 3)
-                        .map(({ id, name, shortDescription, image }) => (
-                          <div key={id} className="w-full">
-                            <Link
-                              to={`/product/${id}`}
-                              className="w-full h-full border rounded-xl lg:rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden bg-white group flex flex-col"
-                            >
-                              <div className="h-48 sm:h-56 lg:h-64 xl:h-72 overflow-hidden">
-                                <img
-                                  src={image}
-                                  alt={name}
-                                  className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                                />
-                              </div>
-                              <div className="p-4 lg:p-6">
-                                <h3 className="text-lg lg:text-xl font-semibold mb-2 lg:mb-3 text-gray-900">
-                                  {name}
-                                </h3>
-                                <p className="text-gray-700 mb-3 lg:mb-4 text-sm lg:text-base">
-                                  {shortDescription}
-                                </p>
-                                <button className="text-[#BF8B30] font-medium hover:text-[#a46f26] transition text-sm lg:text-base">
-                                  Lihat Detail →
-                                </button>
-                              </div>
-                            </Link>
-                          </div>
-                        ))}
+                      <Link
+                        to={`/product/${id}`}
+                        className="w-full h-full border rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden bg-white group flex flex-col"
+                      >
+                        <div className="h-48 sm:h-56 lg:h-64 overflow-hidden">
+                          <img
+                            src={image}
+                            alt={name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                          />
+                        </div>
+                        <div className="p-4">
+                          <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                            {name}
+                          </h3>
+                          <p className="text-gray-700 mb-3 text-sm">
+                            {shortDescription}
+                          </p>
+                          <button className="text-[#BF8B30] font-medium hover:text-[#a46f26] transition text-sm">
+                            Lihat Detail →
+                          </button>
+                        </div>
+                      </Link>
                     </div>
                   )
                 )}
