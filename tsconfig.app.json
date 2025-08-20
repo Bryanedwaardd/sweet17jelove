@@ -15,6 +15,13 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    /* Path mapping - TAMBAHKAN INI */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/config/*": ["./src/config/*"]
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
