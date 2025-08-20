@@ -70,13 +70,17 @@ const Sweet17Invitation = () => {
           {/* Header with animated title */}
           <div className="text-center mb-10 relative">
             <div className="flex justify-center items-center mb-6">
-              <div className="text-4xl text-pink-300 animate-bounce mr-2">✨</div>
+              <div className="text-4xl text-pink-300 animate-bounce mr-2">
+                ✨
+              </div>
               <h1 className="text-4xl md:text-5xl font-cursive text-pink-500">
                 Surat Undangan Spesial
               </h1>
-              <div className="text-4xl text-pink-300 animate-bounce ml-2">✨</div>
+              <div className="text-4xl text-pink-300 animate-bounce ml-2">
+                ✨
+              </div>
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold text-purple-700 mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
               Sweet Seventeen
             </h2>
@@ -140,9 +144,14 @@ const Sweet17Invitation = () => {
                     <p className="text-gray-600 mt-2">
                       Jl. Contoh Alamat No. 123
                     </p>
-                    <button 
+                    <button
                       className="mt-4 px-6 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors flex items-center mx-auto"
-                      onClick={() => window.open('https://maps.google.com?q=Lembur+Kuring', '_blank')}
+                      onClick={() =>
+                        window.open(
+                          "https://maps.google.com?q=Lembur+Kuring",
+                          "_blank"
+                        )
+                      }
                     >
                       <span className="mr-2">📱</span> Buka di Google Maps
                     </button>
@@ -181,8 +190,7 @@ const Sweet17Invitation = () => {
               Kehadiran Anda merupakan kebahagiaan tersendiri bagi kami
             </p>
             <p className="text-md text-gray-500 flex items-center justify-center">
-              Mohon konfirmasi kehadiran
-              sebelum 10 September 2025
+              Mohon konfirmasi kehadiran sebelum 10 September 2025
             </p>
 
             <div className="mt-6 flex justify-center space-x-4">
@@ -238,7 +246,7 @@ const Countdown = () => {
     const calculateTimeLeft = () => {
       const targetDate = new Date("2025-09-20T19:00:00");
       const now = new Date();
-      const difference = targetDate - now;
+      const difference = targetDate.getTime() - now.getTime();
 
       if (difference > 0) {
         return {
