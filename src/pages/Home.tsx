@@ -92,7 +92,7 @@ const Sweet17Invitation = () => {
                 Untuk merayakan ulang tahun
               </p>
               <p className="text-2xl md:text-3xl font-bold text-pink-600 mt-2 animate-pulse">
-                Jesseylin Velove Matiridevi
+                Jesseylin Velove Maitridevi
               </p>
             </div>
           </div>
