@@ -142,7 +142,7 @@ const Sweet17Invitation = () => {
                       Lembur Kuring
                     </p>
                     <p className="text-gray-600 mt-2">
-                      Jl. Contoh Alamat No. 123
+                      Jl. Husein Sastranegara no. 88 Cengkareng - Jakarta 15125
                     </p>
                     <button
                       className="mt-4 px-6 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-colors flex items-center mx-auto"
