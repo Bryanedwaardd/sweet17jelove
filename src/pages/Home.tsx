@@ -10,7 +10,7 @@ const ORN_16 = "/assets/ornaments/Orn-16.png";
 const ORN_18 = "/assets/ornaments/Orn-18.png";
 const ORN_24 = "/assets/ornaments/Orn-24.png";
 const ORN_KUPU = "/assets/ornaments/Orn-kupu.png";
-const COUPLE_FRAME = "src/images/face.png";
+const COUPLE_FRAME = "/assets/photos/face.png";
 
 const EVENT_DATE_ISO = "2025-09-20T19:00:00+07:00";
 
