@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
 // ================== ASSETS ==================
-const ORN_01 = "/assets/ornaments/Orn-01.png";
 const ORN_05 = "/assets/ornaments/Orn-05.png";
 const ORN_10 = "/assets/ornaments/Orn-10.png";
 const ORN_07 = "/assets/ornaments/Orn-07.png";
@@ -18,7 +17,7 @@ const EVENT_DATE_ISO = "2025-09-20T19:00:00+07:00";
 // ================== MAIN COMPONENT ==================
 export default function Sweet17LuxuryPinkInvitation() {
   const [isClient, setIsClient] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0); // tetap tersedia agar struktur mirip awal
+  const [scrollProgress] = useState(0); // tetap tersedia agar struktur mirip awal
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -47,17 +46,7 @@ export default function Sweet17LuxuryPinkInvitation() {
     document.head.appendChild(l3);
     document.head.appendChild(style);
 
-    // ======= Scroll progress (dipertahankan agar struktur mirip, tapi tidak lagi menggerakkan bg bunga) =======
-    const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop || 0;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      setScrollProgress(progress);
-    };
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+
 
     return () => {
       try {
@@ -65,7 +54,7 @@ export default function Sweet17LuxuryPinkInvitation() {
         document.head.removeChild(l2);
         document.head.removeChild(l3);
         document.head.removeChild(style);
-        window.removeEventListener("scroll", handleScroll);
+
       } catch {}
     };
   }, []);
@@ -433,7 +422,6 @@ function SparkleField({ count = 12 }: { count?: number }) {
 }
 
 function ScrollProgressElements({
-  scrollProgress,
 }: {
   scrollProgress: number;
 }) {
