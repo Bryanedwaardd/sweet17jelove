@@ -12,9 +12,6 @@ const ORN_18 = "/assets/ornaments/Orn-18.png";
 const ORN_24 = "/assets/ornaments/Orn-24.png";
 const ORN_KUPU = "/assets/ornaments/Orn-kupu.png";
 const COUPLE_FRAME = "src/images/face.png";
-const COVER_FRAME = "/assets/photos/cover-frame.png"; // (tetap ada kalau dipakai di tempat lain)
-const FOOTNOTE_FRAME = "/assets/photos/footnote-frame.png"; // (tetap ada kalau dipakai di tempat lain)
-const LS_FRAME = "/assets/photos/ls-frame.png"; // (tetap ada kalau dipakai di tempat lain)
 
 const EVENT_DATE_ISO = "2025-09-20T19:00:00+07:00";
 
@@ -127,17 +124,7 @@ export default function Sweet17LuxuryPinkInvitation() {
 
               {/* underline ornament + subtle glow */}
               <div className="relative flex items-center justify-center mt-2 animate-fade-up delay-[400ms]">
-                {/* <img
-                  src={ORN_01}
-                  alt="Divider"
-                  className="w-24 opacity-80 transition-transform duration-500 hover:translate-x-1"
-                /> */}
                 <span className="mx-3 text-2xl text-rose-400">~ ✧ ~</span>
-                {/* <img
-                  src={ORN_01}
-                  alt="Divider"
-                  className="w-24 opacity-80 rotate-180 transition-transform duration-500 hover:-translate-x-1"
-                /> */}
               </div>
 
               {/* Name */}
@@ -403,38 +390,6 @@ function Countdown({ targetISO }: { targetISO: string }) {
     </>
   );
 }
-
-// function PetalRain({ count = 12 }: { count?: number }) {
-//   const petals = Array.from({ length: count }).map((_, i) => {
-//     const left = Math.random() * 100;
-//     const delay = Math.random() * 8;
-//     const duration = 12 + Math.random() * 10;
-//     const size = 16 + Math.floor(Math.random() * 14);
-//     const types = ["🌸", "🌺", "🌷", "🌼"]; // lebih minimalis (tanpa 🥀)
-//     const glyph = types[i % types.length];
-//     return { left, delay, duration, size, glyph, i };
-//   });
-
-//   return (
-//     <div className="fixed inset-0 overflow-hidden pointer-events-none z-[1]">
-//       {petals.map((p) => (
-//         <div
-//           key={p.i}
-//           className="absolute animate-petal-soft"
-//           style={{
-//             left: `${p.left}%`,
-//             animationDelay: `${p.delay}s`,
-//             animationDuration: `${p.duration}s`,
-//             fontSize: `${p.size}px`,
-//             filter: "drop-shadow(0 4px 8px rgba(176,38,104,0.18))",
-//           }}
-//         >
-//           {p.glyph}
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
 
 function SparkleField({ count = 12 }: { count?: number }) {
   const stars = Array.from({ length: count }).map((_, i) => {
