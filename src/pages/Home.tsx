@@ -225,33 +225,33 @@ export default function Sweet17LuxuryPinkInvitation() {
               </div>
             </section>
 
-             {/* ======= REGISTRATION HIGHLIGHT SECTION ======= */}
+            {/* ======= REGISTRATION HIGHLIGHT SECTION ======= */}
             <section className="relative mb-16 text-center animate-pulse-gentle">
-              <div className="relative bg-gradient-to-r from-rose-100 to-pink-100 border-2 border-rose-300/70 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-rose-500 text-white text-sm font-playfair px-4 py-1 rounded-full">
+              <div className="relative bg-gradient-to-r from-rose-50/90 to-pink-50/90 border border-rose-200/40 rounded-3xl p-7 shadow-[0_8px_20px_rgba(176,38,104,0.06)] hover:shadow-[0_12px_28px_rgba(176,38,104,0.1)] transition-all duration-300 hover:-translate-y-1 animate-curved-glow">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-rose-400/90 to-pink-400/90 text-white text-sm font-playfair px-5 py-1.5 rounded-full shadow-[0_4px_10px_rgba(176,38,104,0.12)]">
                   Konfirmasi Kehadiran
                 </div>
-                
-                <h2 className="font-playfair text-2xl text-rose-800 font-bold mb-4">
+                <h2 className="font-playfair text-2xl bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent font-bold mb-4">
                   Mohon konfirmasi kehadiran Anda
                 </h2>
-                
-                <p className="font-imfell text-rose-700 mb-6">
-                  Bantu kami mempersiapkan acara yang spesial dengan mengisi formulir konfirmasi
+                <p className="font-imfell text-rose-500/70 mb-5">
+                  Bantu kami mempersiapkan acara yang spesial dengan mengisi
+                  formulir konfirmasi
                 </p>
-                
+                <div className="mb-5 py-2.5 px-5 bg-white/60 border border-rose-100/60 rounded-2xl inline-block shadow-[0_2px_8px_rgba(176,38,104,0.04)] animate-soft-pulse">
+                  <p className="font-imfell text-rose-500/80 text-sm">
+                    <span className="font-semibold">Dresscode:</span> WHITE 🤍
+                  </p>
+                </div>{" "}
+                <br />
                 <a
                   href={GFORM_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-rose-600 hover:bg-rose-700 text-white font-playfair font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                  className="inline-block bg-gradient-to-r from-rose-400 to-pink-400 hover:from-rose-500 hover:to-pink-500 text-white font-playfair font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_4px_12px_rgba(176,38,104,0.15)] hover:shadow-[0_6px_16px_rgba(176,38,104,0.2)]"
                 >
                   📋 Isi Form Konfirmasi
                 </a>
-                
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-rose-400 text-2xl">
-                  ✨
-                </div>
               </div>
             </section>
 
@@ -288,7 +288,7 @@ export default function Sweet17LuxuryPinkInvitation() {
             {/* ======= FOOTER ======= */}
             <footer className="mt-16 pt-8 border-t border-rose-200/70 text-center">
               <p className="text-sm tracking-widest text-rose-700/80 font-playfair">
-                CREATED WITH ❤️ BY BRYAN 
+                CREATED WITH ❤️ BY BRYAN
               </p>
             </footer>
           </div>
@@ -448,10 +448,7 @@ function SparkleField({ count = 12 }: { count?: number }) {
   );
 }
 
-function ScrollProgressElements({
-}: {
-  scrollProgress: number;
-}) {
+function ScrollProgressElements({}: { scrollProgress: number }) {
   // Dibuat sangat halus & mostly statis agar tetap "mirip ada" tapi tidak ganggu
   const baseOpacity = 0.28; // tidak terlalu terang
   const o = baseOpacity; // tidak tergantung scroll
@@ -563,10 +560,32 @@ const customStylesFinal = `
   .animate-fade-up.delay-\[400ms\] { animation-delay: 0.4s; }
   .animate-fade-up.delay-\[600ms\] { animation-delay: 0.6s; }
 
-  /* Pulse gentle untuk highlight section */
-  @keyframes pulseGentle {
-    0%, 100% { box-shadow: 0 0 0 rgba(225, 29, 72, 0.2); }
-    50% { box-shadow: 0 0 20px rgba(225, 29, 72, 0.4); }
+/* Curved glow effect - lebih melengkung dan bercahaya */
+@keyframes curvedGlow {
+  0%, 100% {
+    box-shadow: 0 6px 18px rgba(176, 38, 104, 0.08),
+                inset 0 0 0 rgba(176,38,104,0);
+    border-radius: 20px;
+    transform: scale(1);
   }
-  .animate-pulse-gentle { animation: pulseGentle 2s ease-in-out infinite; }
+  50% {
+    box-shadow: 0 10px 28px rgba(176, 38, 104, 0.18),
+                0 0 30px rgba(176, 38, 104, 0.12),
+                inset 0 0 12px rgba(176,38,104,0.15);
+    border-radius: 36px; /* lebih melengkung pas glow */
+    transform: scale(1.02);
+  }
+}
+.animate-curved-glow {
+  animation: curvedGlow 3s ease-in-out infinite;
+}
+
+  /* Soft pulse untuk dresscode */
+  @keyframes softPulse {
+    0%, 100% { opacity: 0.9; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.02); }
+  }
+
+  
+  .animate-soft-pulse { animation: softPulse 4s ease-in-out infinite; }
 `;
