@@ -13,6 +13,7 @@ const ORN_KUPU = "/assets/ornaments/Orn-kupu.png";
 const COUPLE_FRAME = "/assets/photos/face.png";
 
 const EVENT_DATE_ISO = "2025-09-20T19:00:00+07:00";
+const GFORM_LINK = "https://forms.gle/QLg823LT8jd88pr39";
 
 // ================== MAIN COMPONENT ==================
 export default function Sweet17LuxuryPinkInvitation() {
@@ -46,15 +47,12 @@ export default function Sweet17LuxuryPinkInvitation() {
     document.head.appendChild(l3);
     document.head.appendChild(style);
 
-
-
     return () => {
       try {
         document.head.removeChild(l1);
         document.head.removeChild(l2);
         document.head.removeChild(l3);
         document.head.removeChild(style);
-
       } catch {}
     };
   }, []);
@@ -77,7 +75,6 @@ export default function Sweet17LuxuryPinkInvitation() {
       />
 
       {/* ======= Optional subtle particles (tetap minimalis) ======= */}
-      {/* {isClient && <PetalRain count={10} />} */}
       {isClient && <SparkleField count={12} />}
 
       {/* ======= MAIN CARD ======= */}
@@ -199,7 +196,7 @@ export default function Sweet17LuxuryPinkInvitation() {
                   📍
                 </div>
                 <div className="text-left">
-                  <p className="font-playfair text-rose-800 text-2xl font-semibold leading-tight hover:translate-x-[1px] transition-transform">
+                  <p className="font-playfair bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent text-2xl font-semibold leading-tight hover:translate-x-[1px] transition-transform">
                     Lembur Kuring
                   </p>
                   <p className="font-imfell text-rose-900/80 text-[17px] leading-snug mt-3">
@@ -216,7 +213,7 @@ export default function Sweet17LuxuryPinkInvitation() {
                   onClick={() => {
                     if (typeof window !== "undefined")
                       window.open(
-                        "https://maps.google.com/?q=Lembur+Kuring+Jakarta",
+                        "https://www.google.com/maps/place/Lembur+Kuring/data=!4m7!3m6!1s0x2e6a02d9963fb003:0x1d231ede33d44861!8m2!3d-6.1121549!4d106.6862083!16s%2Fg%2F1tfm4243!19sChIJA7A_ltkCai4RYUjUM94eIx0?authuser=0&hl=en&rclk=1",
                         "_blank"
                       );
                   }}
@@ -228,9 +225,39 @@ export default function Sweet17LuxuryPinkInvitation() {
               </div>
             </section>
 
+             {/* ======= REGISTRATION HIGHLIGHT SECTION ======= */}
+            <section className="relative mb-16 text-center animate-pulse-gentle">
+              <div className="relative bg-gradient-to-r from-rose-100 to-pink-100 border-2 border-rose-300/70 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-rose-500 text-white text-sm font-playfair px-4 py-1 rounded-full">
+                  Konfirmasi Kehadiran
+                </div>
+                
+                <h2 className="font-playfair text-2xl text-rose-800 font-bold mb-4">
+                  Mohon konfirmasi kehadiran Anda
+                </h2>
+                
+                <p className="font-imfell text-rose-700 mb-6">
+                  Bantu kami mempersiapkan acara yang spesial dengan mengisi formulir konfirmasi
+                </p>
+                
+                <a
+                  href={GFORM_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-rose-600 hover:bg-rose-700 text-white font-playfair font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                >
+                  📋 Isi Form Konfirmasi
+                </a>
+                
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-rose-400 text-2xl">
+                  ✨
+                </div>
+              </div>
+            </section>
+
             {/* ======= COUNTDOWN ======= */}
             <section className="my-14">
-              <h3 className="text-center font-playfair text-rose-800 text-3xl font-semibold mb-3 hover:translate-y-[-1px] transition-transform">
+              <h3 className="text-center font-playfair text-pink-800 text-3xl font-semibold mb-3 hover:translate-y-[-1px] transition-transform">
                 Hitung Mundur
               </h3>
               <p className="text-center font-imfell text-rose-700/90 text-lg mb-8">
@@ -261,7 +288,7 @@ export default function Sweet17LuxuryPinkInvitation() {
             {/* ======= FOOTER ======= */}
             <footer className="mt-16 pt-8 border-t border-rose-200/70 text-center">
               <p className="text-sm tracking-widest text-rose-700/80 font-playfair">
-                CREATED WITH LOVE BY BRYAN EDWARD WIDJAJA
+                CREATED WITH ❤️ BY BRYAN 
               </p>
             </footer>
           </div>
@@ -527,13 +554,19 @@ const customStylesFinal = `
   html { scroll-behavior: smooth; }
 
   /* Fade-up animasi */
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-.animate-fade-up { animation: fadeUp 1s ease-out both; }
-.animate-fade-up.delay-\[200ms\] { animation-delay: 0.2s; }
-.animate-fade-up.delay-\[400ms\] { animation-delay: 0.4s; }
-.animate-fade-up.delay-\[600ms\] { animation-delay: 0.6s; }
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up { animation: fadeUp 1s ease-out both; }
+  .animate-fade-up.delay-\[200ms\] { animation-delay: 0.2s; }
+  .animate-fade-up.delay-\[400ms\] { animation-delay: 0.4s; }
+  .animate-fade-up.delay-\[600ms\] { animation-delay: 0.6s; }
 
+  /* Pulse gentle untuk highlight section */
+  @keyframes pulseGentle {
+    0%, 100% { box-shadow: 0 0 0 rgba(225, 29, 72, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(225, 29, 72, 0.4); }
+  }
+  .animate-pulse-gentle { animation: pulseGentle 2s ease-in-out infinite; }
 `;
