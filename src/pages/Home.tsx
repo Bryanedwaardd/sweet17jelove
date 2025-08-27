@@ -276,7 +276,7 @@ export default function Sweet17LuxuryPinkInvitation() {
                   sukacita."
                 </p>
                 <p className="font-imfell text-rose-800/80 text-lg mt-6">
-                  Mohon konfirmasi kehadiran sebelum 10 September 2025.
+                  Mohon konfirmasi kehadiran sebelum 5 September 2025.
                 </p>
 
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-rose-300 text-3xl">
