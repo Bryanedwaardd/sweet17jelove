@@ -62,16 +62,6 @@ export default function Sweet17LuxuryPinkInvitation() {
       ref={containerRef}
       className="min-h-screen w-full relative overflow-hidden flex items-center justify-center py-8 bg-gradient-to-b from-pink-100 via-rose-50 to-pink-50"
     >
-      {/* ======= BACKGROUND ======= */}
-      <div
-        className="fixed inset-0 z-0 opacity-35"
-        style={{
-          backgroundImage: `url(${ORN_07}), url(${ORN_09})`,
-          backgroundPosition: "left top, right bottom",
-          backgroundSize: "380px, 460px",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
 
       {isClient && <SparkleField count={12} />}
 
@@ -205,9 +195,6 @@ export default function Sweet17LuxuryPinkInvitation() {
                   <div className="bg-white/80 rounded-2xl py-4 px-6 shadow-inner border border-rose-100">
                     <p className="text-rose-800 font-bold text-3xl mb-2 animate-pulse-soft">
                       ALL WHITE
-                      <span className="inline-block ml-2 transform hover:scale-110 transition-transform">
-                        ✨
-                      </span>
                     </p>
                     <div className="text-rose-500 text-5xl">
                       <span className="inline-block animate-bounce">🤍</span>
@@ -236,7 +223,7 @@ export default function Sweet17LuxuryPinkInvitation() {
                     Konfirmasi Kehadiran
                   </h2>
 
-                  <div className="my-6 py-4 bg-white/80 rounded-xl border border-rose-200/60 shadow-sm">
+                  <div className="my-6 py-4rounded-xl">
                     <p className="font-imfell text-rose-800/90 text-lg mb-1">
                       Mohon konfirmasi sebelum
                     </p>
@@ -308,7 +295,7 @@ function SoftCornerOrnaments() {
         />
       </div>
 
-      {/* Side ornaments tetap statis */}
+      {/* Side ornaments tetap statis
       <div className="absolute left-0 top-1/4 w-16 opacity-70">
         <img
           src={ORN_10}
@@ -322,7 +309,7 @@ function SoftCornerOrnaments() {
           alt="Side ornament"
           className="w-full transition-transform duration-500 hover:-translate-x-[2px]"
         />
-      </div>
+      </div> */}
     </>
   );
 }
