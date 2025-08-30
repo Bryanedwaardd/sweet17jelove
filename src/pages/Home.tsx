@@ -2,8 +2,6 @@ import { useEffect, useState, useRef } from "react";
 
 // ================== ASSETS ==================
 const ORN_05 = "/assets/ornaments/Orn-05.png";
-const ORN_10 = "/assets/ornaments/Orn-10.png";
-const ORN_07 = "/assets/ornaments/Orn-07.png";
 const ORN_09 = "/assets/ornaments/Orn-09.png";
 const ORN_14 = "/assets/ornaments/Orn-14.png";
 const ORN_16 = "/assets/ornaments/Orn-16.png";
@@ -182,9 +180,6 @@ export default function Sweet17LuxuryPinkInvitation() {
             <section className="my-14 text-center">
               <div className="relative inline-block px-12 py-8 rounded-3xl bg-gradient-to-br from-white via-rose-50 to-pink-100 border-2 border-rose-200/70 shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
                 {/* Floating elements */}
-                  {/* <div className="absolute -top-4 -left-4 w-10 h-10 bg-rose-300/40 rounded-full animate-float-slow"></div>
-                  <div className="absolute -bottom-3 -right-3 w-8 h-8 bg-pink-300/50 rounded-full animate-float-slower"></div> */}
-
                 <div className="relative z-10">
                   <div className="mb-3">
 
@@ -294,22 +289,6 @@ function SoftCornerOrnaments() {
           className="w-full h-full transition-transform duration-500 hover:scale-105 hover:translate-x-[2px]"
         />
       </div>
-
-      {/* Side ornaments tetap statis
-      <div className="absolute left-0 top-1/4 w-16 opacity-70">
-        <img
-          src={ORN_10}
-          alt="Side ornament"
-          className="w-full transition-transform duration-500 hover:translate-x-[2px]"
-        />
-      </div>
-      <div className="absolute right-0 top-1/3 w-16 opacity-70 scale-x-[-1]">
-        <img
-          src={ORN_10}
-          alt="Side ornament"
-          className="w-full transition-transform duration-500 hover:-translate-x-[2px]"
-        />
-      </div> */}
     </>
   );
 }
