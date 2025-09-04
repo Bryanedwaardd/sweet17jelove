@@ -60,7 +60,6 @@ export default function Sweet17LuxuryPinkInvitation() {
       ref={containerRef}
       className="min-h-screen w-full relative overflow-hidden flex items-center justify-center py-8 bg-gradient-to-b from-pink-100 via-rose-50 to-pink-50"
     >
-
       {isClient && <SparkleField count={12} />}
 
       {/* ======= MAIN CARD ======= */}
@@ -122,9 +121,10 @@ export default function Sweet17LuxuryPinkInvitation() {
                 <div className="absolute -bottom-7 -right-7 w-14 opacity-90 animate-float-slower -rotate-12">
                   <img src={ORN_14} alt="" />
                 </div>
-                <div className="absolute -top-5 -right-4 w-12">
+                <div className="absolute -top-5 -right-4 w-12 pointer-events-none">
                   <img src={ORN_KUPU} alt="" className="animate-butterfly-lr" />
                 </div>
+
                 <div className="absolute -bottom-10 -left-10 w-20 animate-float-slow">
                   <img src={ORN_09} alt="" className="opacity-90" />
                 </div>
@@ -148,7 +148,7 @@ export default function Sweet17LuxuryPinkInvitation() {
                 </div>
               </div>
 
-              <div className="mt-8">
+              <div className="mt-8 relative z-20">
                 <button
                   onClick={() =>
                     window.open(
@@ -156,7 +156,7 @@ export default function Sweet17LuxuryPinkInvitation() {
                       "_blank"
                     )
                   }
-                  className="font-playfair text-base px-8 py-4 rounded-full border border-rose-200/80 bg-gradient-to-r from-rose-100 to-pink-50 hover:from-rose-200 hover:to-rose-100 shadow-sm hover:shadow-md mx-auto"
+                  className="relative z-30 font-playfair text-base px-8 py-4 rounded-full border border-rose-200/80 bg-gradient-to-r from-rose-100 to-pink-50 hover:from-rose-200 hover:to-rose-100 shadow-sm hover:shadow-md mx-auto"
                 >
                   📍 Buka di Google Maps ↗
                 </button>
@@ -182,7 +182,6 @@ export default function Sweet17LuxuryPinkInvitation() {
                 {/* Floating elements */}
                 <div className="relative z-10">
                   <div className="mb-3">
-
                     <h3 className="text-2xl font-bold bg-gradient-to-r from-rose-700 to-pink-600 bg-clip-text text-transparent">
                       Dress Code
                     </h3>
@@ -201,7 +200,7 @@ export default function Sweet17LuxuryPinkInvitation() {
 
             {/* ======= KONFIRMASI UNDANGAN ======= */}
             <section className="my-14 text-center">
-              <div className="relative inline-block px-10 py-10 rounded-3xl bg-gradient-to-br from-rose-100/95 via-pink-100 to-rose-200/90 border-2 border-rose-300 shadow-2xl transform transition-all duration-500 hover:scale-[1.02]">
+              <div className="relative inline-block px-10 py-10 rounded-3xl bg-gradient-to-br from-rose-100/95 via-pink-100 to-rose-200/90 border-2 border-rose-300 shadow-2xl">
                 {/* Animated border effect */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-rose-400/0 via-rose-400/20 to-rose-400/0 animate-shimmer"></div>
 
@@ -583,4 +582,3 @@ const customStylesFinal = `
     animation: bounce 2s ease-in-out infinite;
   }
 `;
-
