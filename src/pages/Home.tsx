@@ -222,7 +222,7 @@ export default function Sweet17LuxuryPinkInvitation() {
                       Mohon konfirmasi sebelum
                     </p>
                     <p className="font-bold text-rose-900 text-xl mb-2 bg-rose-50 py-1 px-4 rounded-full inline-block border border-rose-200">
-                      5 September 2025
+                      7 September 2025
                     </p>
                   </div>
 
@@ -230,7 +230,14 @@ export default function Sweet17LuxuryPinkInvitation() {
                     href={GFORM_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-pulse-gentle"
+                    className="w-full max-w-xs mx-auto block text-center 
+             inline-flex items-center justify-center gap-3
+             bg-gradient-to-r from-rose-500 to-pink-500 
+             hover:from-rose-600 hover:to-pink-600 
+             text-white font-bold py-4 px-6 rounded-full 
+             shadow-lg hover:shadow-xl transform 
+             hover:scale-105 transition-all duration-300 
+             animate-pulse-gentle"
                   >
                     <span className="text-xl">📋</span>
                     <span>Konfirmasi Sekarang</span>
