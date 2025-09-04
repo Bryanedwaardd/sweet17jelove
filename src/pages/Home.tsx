@@ -199,8 +199,8 @@ export default function Sweet17LuxuryPinkInvitation() {
             </section>
 
             {/* ======= KONFIRMASI UNDANGAN ======= */}
-            <section className="my-14 text-center">
-              <div className="relative inline-block px-10 py-10 rounded-3xl bg-gradient-to-br from-rose-100/95 via-pink-100 to-rose-200/90 border-2 border-rose-300 shadow-2xl">
+            <section className="my-14 text-center px-4">
+              <div className="relative w-full max-w-md mx-auto px-6 py-8 rounded-3xl bg-gradient-to-br from-rose-100/95 via-pink-100 to-rose-200/90 border-2 border-rose-300 shadow-2xl">
                 {/* Animated border effect */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-rose-400/0 via-rose-400/20 to-rose-400/0 animate-shimmer"></div>
 
